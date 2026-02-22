@@ -1,0 +1,61 @@
+{
+    "Big_Data": {
+        "Taller_1": {
+            "fecha": "22/02/2026",
+            "temas": {
+                "Grupo_1": [
+                    "Analizar dataset fila 1",
+                    "Analizar dataset fila 2",
+                    "Analizar dataset fila 3"
+                ],
+                "Grupo_10": [
+                    "Analizar dataset fila 4",
+                    "Analizar dataset fila 5",
+                    "Analizar dataset fila 6"
+                ],
+                "Grupo_2": [
+                    "Analizar dataset fila 7",
+                    "Analizar dataset fila 8",
+                    "Analizar dataset fila 9"
+                ],
+                "Grupo_3": [
+                    "Analizar dataset fila 10",
+                    "Analizar dataset fila 11",
+                    "Analizar dataset fila 12"
+                ],
+                "Grupo_4": [
+                    "Analizar dataset fila 13",
+                    "Analizar dataset fila 14",
+                    "Analizar dataset fila 15"
+                ],
+                "Grupo_5": [
+                    "Analizar dataset fila 16",
+                    "Analizar dataset fila 17",
+                    "Analizar dataset fila 18"
+                ],
+                "Grupo_6": [
+                    "Analizar dataset fila 19",
+                    "Analizar dataset fila 20",
+                    "Analizar dataset fila 21"
+                ],
+                "Grupo_7": [
+                    "Analizar dataset fila 22",
+                    "Analizar dataset fila 23",
+                    "Analizar dataset fila 24"
+                ],
+                "Grupo_8": [
+                    "Analizar dataset fila 25",
+                    "Analizar dataset fila 26",
+                    "Analizar dataset fila 27"
+                ],
+                "Grupo_9": [
+                    "Analizar dataset fila 28",
+                    "Analizar dataset fila 29",
+                    "Analizar dataset fila 30"
+                ]
+            },
+            "subtitulo": "Taller 1. Librería Numpy",
+            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    \n\n    #!pip install calificar\n    \n\n    \n\n    #Librerias para el Taller \n\n    import calificar as cr \n\n    import numpy as np \n\n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6) \n\n    \n\n    Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' \n\n    Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    "
+        }
+    }
+}
