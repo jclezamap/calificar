@@ -385,7 +385,7 @@
                 ]
             },
             "subtitulo": "Librería Numpy",
-            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n    \n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)\n    \n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json\n    "
+            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n\n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)\n\n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json\n    "
         }
     }
 }
