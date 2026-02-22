@@ -1,0 +1,27 @@
+Metadata-Version: 2.4
+Name: calificar
+Version: 0.1.1
+Summary: Permite calificar talleres a través de Python
+Author-email: Juan Carlos Lezama <jclezamap@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.4.0
+Requires-Dist: numpy>=1.22.0
+Requires-Dist: requests>=2.28.0
+Dynamic: license-file
+Dynamic: requires-python
+
+# 📦 Calificar
+
+[![PyPI version](https://img.shields.io/pypi/v/calificar.svg)](https://pypi.org/project/calificar/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Es una librería para calificar talleres a partir de Python.
+
+## 🚀 Instalación
+
+Instálalo fácilmente usando pip:
+
+```bash
+pip install calificar

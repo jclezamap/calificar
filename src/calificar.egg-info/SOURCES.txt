@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/calificar/__init__.py
+src/calificar/core.py
+src/calificar.egg-info/PKG-INFO
+src/calificar.egg-info/SOURCES.txt
+src/calificar.egg-info/dependency_links.txt
+src/calificar.egg-info/requires.txt
+src/calificar.egg-info/top_level.txt

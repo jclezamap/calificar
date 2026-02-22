@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calificar"
+version = "0.1.1"
+authors = [
+  { name="Juan Carlos Lezama", email="jclezamap@gmail.com" },
+]
+description = "Permite calificar talleres a través de Python"
+readme = "README.md"
+requires-python = ">=3.7"
+
+dependencies = [
+    "pandas>=1.4.0",
+    "numpy>=1.22.0",
+    "requests>=2.28.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
