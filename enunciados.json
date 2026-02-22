@@ -52,10 +52,340 @@
                     "Analizar dataset fila 28",
                     "Analizar dataset fila 29",
                     "Analizar dataset fila 30"
+                ],
+                "Tema_1": [
+                    "**1.** Convierta la lista `[[2,2,4], [3,3,2], [1,4,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 56. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 1 al 10. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 1?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 4], [1, 4]], B=[[1, 3], [1, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_10": [
+                    "**1.** Convierta la lista `[[3,3,5], [5,1,1], [3,1,4]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 65. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 10 al 19. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 0?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 3], [4, 1]], B=[[3, 4], [4, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_11": [
+                    "**1.** Convierta la lista `[[1,1,2], [4,1,3], [2,2,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 66. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 11 al 20. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 1?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 3], [2, 2]], B=[[4, 4], [1, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_12": [
+                    "**1.** Convierta la lista `[[4,5,3], [2,2,4], [4,2,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 67. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 12 al 21. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 2?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 4], [4, 1]], B=[[2, 2], [1, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_13": [
+                    "**1.** Convierta la lista `[[2,4,5], [3,1,3], [5,5,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 68. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 13 al 22. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 3?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 1], [1, 2]], B=[[4, 4], [2, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_14": [
+                    "**1.** Convierta la lista `[[3,3,5], [1,4,4], [1,1,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 69. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 14 al 23. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 4?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 1], [2, 1]], B=[[1, 2], [2, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_15": [
+                    "**1.** Convierta la lista `[[4,1,4], [4,5,4], [5,2,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 70. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 15 al 24. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 5?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 4], [1, 4]], B=[[4, 2], [1, 3]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_16": [
+                    "**1.** Convierta la lista `[[2,1,5], [4,1,1], [3,1,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 71. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 16 al 25. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 6?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 1], [1, 3]], B=[[4, 3], [3, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_17": [
+                    "**1.** Convierta la lista `[[2,3,2], [2,1,1], [1,4,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 72. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 17 al 26. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 7?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 3], [3, 3]], B=[[1, 2], [3, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_18": [
+                    "**1.** Convierta la lista `[[4,4,2], [2,2,1], [2,3,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 73. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 18 al 27. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 8?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 4], [2, 1]], B=[[4, 4], [1, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_19": [
+                    "**1.** Convierta la lista `[[5,4,1], [5,3,3], [4,3,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 74. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 19 al 28. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 9?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 2], [4, 1]], B=[[4, 1], [1, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_2": [
+                    "**1.** Convierta la lista `[[2,4,1], [5,4,3], [5,3,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 57. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 2 al 11. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 2?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 1], [1, 1]], B=[[2, 4], [3, 3]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_20": [
+                    "**1.** Convierta la lista `[[2,1,1], [3,1,3], [5,5,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 75. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 20 al 29. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 0?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 4], [4, 3]], B=[[1, 4], [1, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_21": [
+                    "**1.** Convierta la lista `[[4,3,2], [1,2,1], [5,4,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 76. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 21 al 30. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 1?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 1], [1, 3]], B=[[3, 4], [4, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_22": [
+                    "**1.** Convierta la lista `[[4,1,4], [3,5,5], [3,1,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 77. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 22 al 31. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 2?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 2], [4, 4]], B=[[2, 4], [1, 3]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_23": [
+                    "**1.** Convierta la lista `[[3,4,3], [4,2,2], [4,4,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 78. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 23 al 32. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 3?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 1], [2, 3]], B=[[3, 2], [1, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_24": [
+                    "**1.** Convierta la lista `[[1,2,5], [3,1,5], [5,5,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 79. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 24 al 33. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 4?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 2], [4, 3]], B=[[3, 3], [2, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_25": [
+                    "**1.** Convierta la lista `[[5,4,5], [4,1,2], [1,4,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 80. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 25 al 34. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 5?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 4], [3, 1]], B=[[2, 3], [1, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_26": [
+                    "**1.** Convierta la lista `[[4,3,1], [5,4,5], [1,1,4]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 81. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 26 al 35. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 6?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 4], [1, 4]], B=[[2, 4], [3, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_27": [
+                    "**1.** Convierta la lista `[[1,2,2], [1,4,5], [3,1,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 82. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 27 al 36. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 7?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 4], [1, 2]], B=[[1, 1], [4, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_28": [
+                    "**1.** Convierta la lista `[[2,3,4], [1,3,4], [1,2,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 83. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 28 al 37. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 8?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 1], [4, 2]], B=[[3, 4], [3, 3]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_29": [
+                    "**1.** Convierta la lista `[[1,4,4], [3,4,2], [5,2,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 84. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 29 al 38. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 9?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 2], [4, 3]], B=[[3, 4], [3, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_3": [
+                    "**1.** Convierta la lista `[[1,2,5], [3,5,2], [2,4,1]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 58. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 3 al 12. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 3?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 3], [1, 4]], B=[[2, 1], [2, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_30": [
+                    "**1.** Convierta la lista `[[1,3,3], [1,3,1], [5,5,4]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 85. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 30 al 39. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 0?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 3], [1, 3]], B=[[4, 4], [2, 3]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_4": [
+                    "**1.** Convierta la lista `[[5,3,1], [2,2,1], [1,5,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 59. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 4 al 13. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 4?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 2], [4, 3]], B=[[3, 3], [2, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_5": [
+                    "**1.** Convierta la lista `[[1,3,1], [3,2,1], [2,2,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 60. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 5 al 14. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 0 y columna 5?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[4, 2], [3, 2]], B=[[2, 4], [3, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_6": [
+                    "**1.** Convierta la lista `[[3,4,1], [3,1,3], [4,2,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 61. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 6 al 15. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 1 y columna 6?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 4], [3, 4]], B=[[4, 1], [3, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_7": [
+                    "**1.** Convierta la lista `[[4,5,2], [1,2,2], [5,2,4]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 62. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 7 al 16. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 2 y columna 7?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[1, 1], [1, 4]], B=[[1, 1], [4, 1]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_8": [
+                    "**1.** Convierta la lista `[[4,4,4], [2,2,2], [2,1,5]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 63. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 8 al 17. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 3 y columna 8?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[3, 3], [3, 4]], B=[[2, 3], [2, 4]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
+                ],
+                "Tema_9": [
+                    "**1.** Convierta la lista `[[5,3,3], [3,5,5], [3,1,4]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
+                    "**2.** Cree un vector que inicie en 0 y termine en 64. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
+                    "**3.** Calcule la suma acumulada (`cumsum`) del vector anterior. **[2]¿Qué valor hay en la posición 40?**",
+                    "**4.** Cree un vector con los enteros del 9 al 18. Use `.dtype` y conviértalo a string. **[3]¿Cuál es el tipo de datos?**",
+                    "**5.** Cree una serie uniforme de 0 a 50 con 25 elementos.",
+                    "**6.** Modifique la serie anterior colocando a los primeros 10 elementos (índice 0 al 9) el valor de 5. Luego, sume todos los elementos. **[4]¿Cuánto es el valor de la suma?**",
+                    "**7.** Cree una matriz de 5x10 llena de ceros (tipo 'U256'). Use ciclos `for` y `.shape` para que cada celda contenga la fila y columna unidas como texto (ej: '00', '01'). **[5]¿Qué valor hay en la posición [0, 8]?**",
+                    "**8.** De la matriz de textos anterior: **[6]¿Qué valor hay en la fila 4 y columna 9?**",
+                    "**9. RETO FINAL:** Programe la función `mi_operacion(A, B)` que multiplique matrices elemento a elemento con ciclos `for` y sume el total. Matrices: A=[[2, 2], [1, 4]], B=[[3, 4], [1, 2]]. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el resultado de la función?**.[8]¿Cuál es el código de la validación?"
                 ]
             },
             "subtitulo": "Librería Numpy",
-            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n\n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)\n\n    Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    "
+            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n    \n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)\n    \n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json\n    "
         }
     }
 }
