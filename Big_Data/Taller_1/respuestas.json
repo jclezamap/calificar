@@ -1,0 +1,842 @@
+{
+  "tema_1": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected": 22,
+      "codigo_oculto": "1001"
+    }
+  },
+  "tema_2": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "B": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "expected": 16,
+      "codigo_oculto": "1002"
+    }
+  },
+  "tema_3": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      "expected": 17,
+      "codigo_oculto": "1003"
+    }
+  },
+  "tema_4": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "B": [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "expected": 29,
+      "codigo_oculto": "1004"
+    }
+  },
+  "tema_5": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            2
+          ]
+        ],
+        "B": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            2
+          ]
+        ]
+      },
+      "expected": 29,
+      "codigo_oculto": "1005"
+    }
+  },
+  "tema_6": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "B": [
+          [
+            4,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "expected": 25,
+      "codigo_oculto": "1006"
+    }
+  },
+  "tema_7": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "expected": 10,
+      "codigo_oculto": "1007"
+    }
+  },
+  "tema_8": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "B": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected": 37,
+      "codigo_oculto": "1008"
+    }
+  },
+  "tema_9": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected": 23,
+      "codigo_oculto": "1009"
+    }
+  },
+  "tema_10": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "B": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            1
+          ]
+        ]
+      },
+      "expected": 41,
+      "codigo_oculto": "1010"
+    }
+  },
+  "tema_11": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "B": [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected": 26,
+      "codigo_oculto": "1011"
+    }
+  },
+  "tema_12": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "B": [
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "expected": 19,
+      "codigo_oculto": "1012"
+    }
+  },
+  "tema_13": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "B": [
+          [
+            4,
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "expected": 18,
+      "codigo_oculto": "1013"
+    }
+  },
+  "tema_14": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "B": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "expected": 9,
+      "codigo_oculto": "1014"
+    }
+  },
+  "tema_15": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            4,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "expected": 37,
+      "codigo_oculto": "1015"
+    }
+  },
+  "tema_16": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "B": [
+          [
+            4,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected": 22,
+      "codigo_oculto": "1016"
+    }
+  },
+  "tema_17": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ]
+        ],
+        "B": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected": 30,
+      "codigo_oculto": "1017"
+    }
+  },
+  "tema_18": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "B": [
+          [
+            4,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "expected": 27,
+      "codigo_oculto": "1018"
+    }
+  },
+  "tema_19": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            2
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "B": [
+          [
+            4,
+            1
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      "expected": 14,
+      "codigo_oculto": "1019"
+    }
+  },
+  "tema_20": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            4
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "B": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected": 27,
+      "codigo_oculto": "1020"
+    }
+  },
+  "tema_21": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "B": [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      "expected": 20,
+      "codigo_oculto": "1021"
+    }
+  },
+  "tema_22": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ]
+        ],
+        "B": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      },
+      "expected": 28,
+      "codigo_oculto": "1022"
+    }
+  },
+  "tema_23": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "B": [
+          [
+            3,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "expected": 16,
+      "codigo_oculto": "1023"
+    }
+  },
+  "tema_24": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "B": [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ]
+      },
+      "expected": 38,
+      "codigo_oculto": "1024"
+    }
+  },
+  "tema_25": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "B": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      "expected": 23,
+      "codigo_oculto": "1025"
+    }
+  },
+  "tema_26": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "B": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      },
+      "expected": 27,
+      "codigo_oculto": "1026"
+    }
+  },
+  "tema_27": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            2,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "B": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ]
+      },
+      "expected": 14,
+      "codigo_oculto": "1027"
+    }
+  },
+  "tema_28": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        "B": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "expected": 31,
+      "codigo_oculto": "1028"
+    }
+  },
+  "tema_29": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ],
+        "B": [
+          [
+            3,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "expected": 44,
+      "codigo_oculto": "1029"
+    }
+  },
+  "tema_30": {
+    "mi_operacion": {
+      "inputs": {
+        "A": [
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "B": [
+          [
+            4,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "expected": 27,
+      "codigo_oculto": "1030"
+    }
+  }
+}

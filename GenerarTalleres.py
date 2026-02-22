@@ -98,8 +98,8 @@ if __name__ == "__main__":
     
     Taller1=cr.taller('1026',1, 'taller1BD2026i',6)
     
-    Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'
-    Se cambia 1 por el Número de su Grupo asignado. \n
+    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'
+    #Se cambia 1 por el Número de su Grupo asignado. \n
     \n
     """
 
