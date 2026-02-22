@@ -3,56 +3,6 @@
         "Taller_1": {
             "fecha": "22/02/2026",
             "temas": {
-                "Grupo_1": [
-                    "Analizar dataset fila 1",
-                    "Analizar dataset fila 2",
-                    "Analizar dataset fila 3"
-                ],
-                "Grupo_10": [
-                    "Analizar dataset fila 4",
-                    "Analizar dataset fila 5",
-                    "Analizar dataset fila 6"
-                ],
-                "Grupo_2": [
-                    "Analizar dataset fila 7",
-                    "Analizar dataset fila 8",
-                    "Analizar dataset fila 9"
-                ],
-                "Grupo_3": [
-                    "Analizar dataset fila 10",
-                    "Analizar dataset fila 11",
-                    "Analizar dataset fila 12"
-                ],
-                "Grupo_4": [
-                    "Analizar dataset fila 13",
-                    "Analizar dataset fila 14",
-                    "Analizar dataset fila 15"
-                ],
-                "Grupo_5": [
-                    "Analizar dataset fila 16",
-                    "Analizar dataset fila 17",
-                    "Analizar dataset fila 18"
-                ],
-                "Grupo_6": [
-                    "Analizar dataset fila 19",
-                    "Analizar dataset fila 20",
-                    "Analizar dataset fila 21"
-                ],
-                "Grupo_7": [
-                    "Analizar dataset fila 22",
-                    "Analizar dataset fila 23",
-                    "Analizar dataset fila 24"
-                ],
-                "Grupo_8": [
-                    "Analizar dataset fila 25",
-                    "Analizar dataset fila 26",
-                    "Analizar dataset fila 27"
-                ],
-                "Grupo_9": [
-                    "Analizar dataset fila 28",
-                    "Analizar dataset fila 29",
-                    "Analizar dataset fila 30"
-                ],
                 "Tema_1": [
                     "**1.** Convierta la lista `[[2,2,4], [3,3,2], [1,4,3]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**",
                     "**2.** Cree un vector que inicie en 0 y termine en 56. Genere un nuevo vector recortando los dos primeros elementos (del índice 2 al final). **[1]¿Cuál es el valor del elemento 47 de este vector recortado?**",
@@ -385,7 +335,7 @@
                 ]
             },
             "subtitulo": "Librería Numpy",
-            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n\n    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)\n\n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json\n    "
+            "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n    \n    Taller1=cr.taller('1026',1, 'taller1BD2026i',9)\n    \n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json\n    "
         }
     }
 }
