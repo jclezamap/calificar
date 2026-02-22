@@ -89,18 +89,16 @@ if __name__ == "__main__":
         'Enunciado': [f"Analizar dataset fila {i}" for i in range(1, 31)]
     })
     
-    sub_t = "Taller 1. Librería Numpy"
+    sub_t = "Librería Numpy"
     inst_p = """Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n
-    \n
     #!pip install calificar
-    \n
-    \n
-    #Librerias para el Taller \n
-    import calificar as cr \n
-    import numpy as np \n
-    Taller1=cr.taller('1026',1, 'taller1BD2026i',6) \n
-    \n
-    Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' \n
+    #Librerias para el Taller
+    import calificar as cr
+    import numpy as np
+    
+    Taller1=cr.taller('1026',1, 'taller1BD2026i',6)
+    
+    Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'
     Se cambia 1 por el Número de su Grupo asignado. \n
     \n
     """
