@@ -1,7 +1,6 @@
 LICENSE
 README.md
 pyproject.toml
-setup.py
 src/calificar/__init__.py
 src/calificar/core.py
 src/calificar.egg-info/PKG-INFO

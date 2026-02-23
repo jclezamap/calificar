@@ -1,4 +1,6 @@
 @echo off
+cd "C:\Users\JUAN\OneDrive\Universidades\UNAL\Clases UNAL\python\calificar"
+dir
 set /p version="Ingresa la nueva version (ej. 0.1.1): "
 
 :: 1. Actualizar versión en el pyproject.toml (manual o con este recordatorio)
