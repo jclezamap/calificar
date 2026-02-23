@@ -46,7 +46,11 @@ class taller:
             url = f'https://www.economiafinanciera.com.co/indexdes.php?app=excel&modulo=taller&accion=respuestas&Actividad={self.taller}'
             resp = requests.post(url, data=datos)
             partes = resp.text.split("|")
-            return print(f"🔢 Validación de Puntos: {partes[0]} \n Nota: {partes[1]} \n Mensaje: {partes[2][1:]}")
+            if len(partes) >= 3:
+                return print(f"🔢 Validación de Puntos: {partes[0]} \n Nota: {partes[1]} \n Mensaje: {partes[2][1:]}")
+            else:
+                print(f"Respuesta recibida: {partes[0]}")
+                
         except Exception as e:
             return print(f"❌ Error en calificación: {str(e)}")
 
