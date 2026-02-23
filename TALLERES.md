@@ -1,4 +1,4 @@
-# 📚 Portal Global de Talleres
+# 📚 Portal de Talleres
 
  Seleccione su curso:
 
