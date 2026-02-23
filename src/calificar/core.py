@@ -91,7 +91,7 @@ class evafunciones:
         hash_obj = hashlib.sha256(f"{n_secreto}{salt}{self.num_tema}".encode())
         return hash_obj.hexdigest()[:8].upper()
 
-    def obtener_funcion_estudiante(nombre_funcion="mi_operacion"):
+    def obtener_funcion_estudiante(self,nombre_funcion):
         # 1. Intentamos obtener el módulo desde el stack
         frame = inspect.stack()[1]
         modulo = inspect.getmodule(frame[0])
