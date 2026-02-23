@@ -1,4 +1,3 @@
-```markdown
 # 📦 calificar
 
 [![PyPI version](https://img.shields.io/pypi/v/calificar.svg?color=blue)](https://pypi.org/project/calificar/)
@@ -10,12 +9,21 @@
 ---
 
 ## 📍 Índice
-- [🚀 Instalación](#-instalación)
-- [🛠️ Configuración Inicial](#️-configuración-inicial)
-- [📝 Cómo Responder](#-cómo-responder)
-- [✅ Calificar y Validar](#-calificar-y-validar)
-- [🔍 Funciones Auxiliares](#-funciones-auxiliares)
-- [💡 Ejemplos Completos](#-ejemplos-completos)
+- [📦 calificar](#-calificar)
+  - [📍 Índice](#-índice)
+  - [🚀 Instalación](#-instalación)
+  - [🛠️ Configuración Inicial](#️-configuración-inicial)
+    - [📋 Parámetros requeridos:](#-parámetros-requeridos)
+  - [📝 Cómo Responder](#-cómo-responder)
+  - [✅ Calificar y Validar](#-calificar-y-validar)
+    - [1. Obtener Nota y Registrar](#1-obtener-nota-y-registrar)
+    - [2. Validación de Funciones (`evafunciones`)](#2-validación-de-funciones-evafunciones)
+  - [🔍 Funciones Auxiliares](#-funciones-auxiliares)
+    - [Ver respuestas guardadas](#ver-respuestas-guardadas)
+  - [💡 Ejemplos Completos](#-ejemplos-completos)
+    - [👨‍💻 Caso Individual](#-caso-individual)
+    - [👥 Caso en Parejas](#-caso-en-parejas)
+  - [📄 Licencia](#-licencia)
 
 ---
 
