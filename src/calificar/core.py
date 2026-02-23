@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import inspect
 import hashlib 
-
+import sys
 
 
 class taller:
@@ -91,6 +91,24 @@ class evafunciones:
         hash_obj = hashlib.sha256(f"{n_secreto}{salt}{self.num_tema}".encode())
         return hash_obj.hexdigest()[:8].upper()
 
+    def obtener_funcion_estudiante(nombre_funcion="mi_operacion"):
+        # 1. Intentamos obtener el módulo desde el stack
+        frame = inspect.stack()[1]
+        modulo = inspect.getmodule(frame[0])
+        
+        # 2. Intentamos buscar en el módulo detectado
+        funcion = getattr(modulo, nombre_funcion, None)
+        
+        # 3. Si no aparece (común en Jupyter o ejecuciones directas), 
+        # buscamos en el diccionario global del script principal
+        if funcion is None:
+            main_mod = sys.modules.get('__main__')
+            funcion = getattr(main_mod, nombre_funcion, None)
+            
+        return funcion
+    
+
+
     def validar(self, nombre_funcion):
         if not self.respuestas:
             print("❌ No hay respuestas cargadas.")
@@ -112,10 +130,8 @@ class evafunciones:
         codigo_base = datos_reto.get('codigo_oculto', '0000')
 
         # 2. Obtener función del estudiante
-        frame = inspect.stack()[1]
-        modulo = inspect.getmodule(frame[0])
-        funcion_estudiante = getattr(modulo, nombre_funcion, None)
-        
+        funcion_estudiante = self.obtener_funcion_estudiante(nombre_funcion)
+         
         if not funcion_estudiante:
             print(f"❌ No se encontró la función '{nombre_funcion}' en el código.")
             return
