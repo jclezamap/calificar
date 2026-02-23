@@ -17,7 +17,7 @@ Para realizar este taller, asegúrate de tener instalada las librerías numpy y 
 
     
 
-    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json
+    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1
     
 
 --- 

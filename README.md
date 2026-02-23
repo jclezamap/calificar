@@ -1,13 +1,155 @@
-# 📦 Calificar
+```markdown
+# 📦 calificar
 
-[![PyPI version](https://img.shields.io/pypi/v/calificar.svg)](https://pypi.org/project/calificar/)
+[![PyPI version](https://img.shields.io/pypi/v/calificar.svg?color=blue)](https://pypi.org/project/calificar/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Versions](https://img.shields.io/pypi/pyversions/calificar.svg)](https://pypi.org/project/calificar/)
 
-Es una librería para calificar talleres a partir de Python.
+**calificar** es una librería diseñada para la evaluación automática de talleres y retos de programación en entornos Python (Jupyter, Google Colab, etc.). Permite a los estudiantes validar sus procesos en tiempo real y registrar sus calificaciones de forma automática en el sistema del docente.
+
+---
+
+## 📍 Índice
+- [🚀 Instalación](#-instalación)
+- [🛠️ Configuración Inicial](#️-configuración-inicial)
+- [📝 Cómo Responder](#-cómo-responder)
+- [✅ Calificar y Validar](#-calificar-y-validar)
+- [🔍 Funciones Auxiliares](#-funciones-auxiliares)
+- [💡 Ejemplos Completos](#-ejemplos-completos)
+
+---
 
 ## 🚀 Instalación
 
-Instálalo fácilmente usando pip:
+Instálalo fácilmente usando `pip`:
 
 ```bash
 pip install calificar
+
+```
+
+Luego, impórtalo en tu entorno de trabajo:
+
+```python
+import calificar as cr
+
+```
+
+---
+
+## 🛠️ Configuración Inicial
+
+Para comenzar, debes inicializar tu taller. Esta función conecta tu código con el sistema de notas.
+
+```python
+Taller1 = cr.taller('CODIGO', GRUPO, 'NOMBRE_TALLER', NUM_PREGUNTAS)
+
+```
+
+### 📋 Parámetros requeridos:
+
+* **`CODIGO`**: Tu cédula o código estudiantil (entre comillas).
+* **`GRUPO`**: El número de grupo que te asignó el docente.
+* **`NOMBRE_TALLER`**: El identificador del taller (ej: `'taller1BD2026i'`).
+* **`NUM_PREGUNTAS`**: Cantidad total de preguntas del taller.
+
+---
+
+## 📝 Cómo Responder
+
+En Python, las listas e índices comienzan en **0**. Si vas a responder la pregunta **#1**, el índice que debes usar es **0**.
+
+```python
+# Sintaxis: Taller1.respuestas(INDICE_PREGUNTA, RESULTADO)
+
+# Ejemplo:
+resultado_ejercicio0 = 12.5
+Taller1.respuestas(0, resultado_ejercicio0) 
+
+```
+
+---
+
+## ✅ Calificar y Validar
+
+### 1. Obtener Nota y Registrar
+
+Cuando termines tus ejercicios, ejecuta la función de calificación. Esto enviará tus datos al servidor.
+
+```python
+Taller1.calificar()
+
+```
+
+**Al ejecutarlo verás:**
+
+1. 🔢 **Validación de Puntos:** Un `1` por cada punto correcto y `0` por los incorrectos.
+2. 📝 **Nota:** Tu calificación actual.
+3. 💬 **Mensaje:** Confirmación de registro y el tiempo restante para el cierre del taller.
+
+### 2. Validación de Funciones (`evafunciones`)
+
+Si el taller requiere crear una función de Python, usa esta herramienta para obtener un código de validación:
+
+```python
+# Configuración del validador
+URL = "[https://github.com/usuario/repo/taller1](https://github.com/usuario/repo/taller1)"
+eva = cr.evafunciones(URL, GRUPO)
+
+# Si tu función es correcta, esto generará un código secreto
+codigo = eva.validar("nombre_de_tu_funcion")
+
+# Guarda ese código como respuesta al punto correspondiente
+Taller1.respuestas(4, codigo)
+
+```
+
+---
+
+## 🔍 Funciones Auxiliares
+
+### Ver respuestas guardadas
+
+Usa esta función para ver qué datos tienes almacenados en memoria antes de enviar la calificación final:
+
+```python
+Taller1.resp
+
+```
+
+---
+
+## 💡 Ejemplos Completos
+
+### 👨‍💻 Caso Individual
+
+```python
+import calificar as cr
+
+# 1. Inicio
+Taller1 = cr.taller('1026', 1, 'taller1BD2026i', 5)
+
+# 2. Desarrollo (Pregunta 1: ¿Cuánto es 6+6?)
+a = 12
+Taller1.respuestas(0, a)
+
+# 3. Calificación
+Taller1.calificar()
+
+```
+
+### 👥 Caso en Parejas
+
+Si trabajan dos personas, separen sus códigos con un punto y coma (`;`) dentro de las comillas:
+
+```python
+Taller1 = cr.taller('1011;1012', 12, 'taller1FC2026i', 9)
+
+```
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT.
+

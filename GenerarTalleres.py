@@ -81,7 +81,7 @@ def construir_archivos_desde_diccionario(datos):
                     f_curso.write("\n---\n")
 
 # --- EJECUCIÓN ---
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #df_semana = pd.DataFrame({
     #    'Curso': ['Big_Data'] * 30,
     #    'Taller': [1] * 30, 
@@ -89,7 +89,9 @@ if __name__ == "__main__":
     #    'Enunciado': [f"Analizar dataset fila {i}" for i in range(1, 31)]
     #})
     
+
 sub_t = "Librería Numpy"
+
 inst_p = """Para realizar este taller, asegúrate de tener instalada las librerías numpy y calificar. \n\n
     #!pip install calificar
     #Librerias para el Taller
@@ -101,7 +103,7 @@ inst_p = """Para realizar este taller, asegúrate de tener instalada las librer�
     #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'
     #Se cambia 1 por el Número de su Grupo asignado. \n
     \n
-    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1/respuestas.json
+    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_1
     """
 
 actualizar_sistema_talleres(df_enunciados, subtitulo=sub_t, instruccion_principal=inst_p)
