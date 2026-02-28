@@ -1,0 +1,512 @@
+{
+  "tema_1": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2535.0,
+      "codigo_oculto": "699C32BB"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1665,
+      "codigo_oculto": "AE4992FF"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 410.0,
+      "codigo_oculto": "8F9DA67E"
+    }
+  },
+  "tema_2": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2704.0,
+      "codigo_oculto": "A22B2910"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1522,
+      "codigo_oculto": "AE87D532"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 367.0,
+      "codigo_oculto": "08CBACAE"
+    }
+  },
+  "tema_3": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2538.0,
+      "codigo_oculto": "7EA60BEB"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1903,
+      "codigo_oculto": "CC13C5B8"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 329.0,
+      "codigo_oculto": "54F22E59"
+    }
+  },
+  "tema_4": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2711.0,
+      "codigo_oculto": "D0AABBDB"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1535,
+      "codigo_oculto": "5E3E30E0"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 295.0,
+      "codigo_oculto": "FDEC5497"
+    }
+  },
+  "tema_5": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2204.0,
+      "codigo_oculto": "2720E59E"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.141,
+      "codigo_oculto": "8761B760"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 291.0,
+      "codigo_oculto": "ED99B7CF"
+    }
+  },
+  "tema_6": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2454.0,
+      "codigo_oculto": "8E5734E1"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1495,
+      "codigo_oculto": "2175A4EC"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 360.0,
+      "codigo_oculto": "9D16A97A"
+    }
+  },
+  "tema_7": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2350.0,
+      "codigo_oculto": "2D7A9465"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1608,
+      "codigo_oculto": "F8B2DA7D"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 296.0,
+      "codigo_oculto": "3BB84C2B"
+    }
+  },
+  "tema_8": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2568.0,
+      "codigo_oculto": "641DD5CC"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1565,
+      "codigo_oculto": "9E7A15ED"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 396.0,
+      "codigo_oculto": "3D6CA381"
+    }
+  },
+  "tema_9": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2649.0,
+      "codigo_oculto": "F345D7E9"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1758,
+      "codigo_oculto": "154A6CE3"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 403.0,
+      "codigo_oculto": "FBAFB419"
+    }
+  },
+  "tema_10": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2722.0,
+      "codigo_oculto": "58E5EFB2"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.159,
+      "codigo_oculto": "CE3F4957"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 356.0,
+      "codigo_oculto": "C20B642F"
+    }
+  },
+  "tema_11": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2397.0,
+      "codigo_oculto": "FD0AC328"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1313,
+      "codigo_oculto": "E8118357"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 452.0,
+      "codigo_oculto": "E89F1025"
+    }
+  },
+  "tema_12": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2699.0,
+      "codigo_oculto": "3DC9B3FD"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1655,
+      "codigo_oculto": "AB97E176"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 289.0,
+      "codigo_oculto": "EFD97427"
+    }
+  },
+  "tema_13": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2823.0,
+      "codigo_oculto": "30EDB204"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1505,
+      "codigo_oculto": "7654844A"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 323.0,
+      "codigo_oculto": "187AEC5A"
+    }
+  },
+  "tema_14": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2472.0,
+      "codigo_oculto": "E116F727"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1547,
+      "codigo_oculto": "923886AE"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 283.0,
+      "codigo_oculto": "6ECC6668"
+    }
+  },
+  "tema_15": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2799.0,
+      "codigo_oculto": "4E27503D"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.193,
+      "codigo_oculto": "C70E36F3"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 346.0,
+      "codigo_oculto": "D17D725D"
+    }
+  },
+  "tema_16": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2609.0,
+      "codigo_oculto": "48F340D2"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1638,
+      "codigo_oculto": "1F170A43"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 290.0,
+      "codigo_oculto": "77E93299"
+    }
+  },
+  "tema_17": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2537.0,
+      "codigo_oculto": "895A7AD4"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1653,
+      "codigo_oculto": "A6A8DF24"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 274.0,
+      "codigo_oculto": "B32761B1"
+    }
+  },
+  "tema_18": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2558.0,
+      "codigo_oculto": "11A1128B"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1773,
+      "codigo_oculto": "536C56F7"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 284.0,
+      "codigo_oculto": "D2DBBC80"
+    }
+  },
+  "tema_19": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2888.0,
+      "codigo_oculto": "2051EE59"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1533,
+      "codigo_oculto": "DC3A5CC2"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 408.0,
+      "codigo_oculto": "11BD3CFD"
+    }
+  },
+  "tema_20": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2332.0,
+      "codigo_oculto": "FA5FD055"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1423,
+      "codigo_oculto": "0FFFE503"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 246.0,
+      "codigo_oculto": "93EB3D25"
+    }
+  },
+  "tema_21": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2485.0,
+      "codigo_oculto": "5EF4CEA1"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1585,
+      "codigo_oculto": "CAE07258"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 307.0,
+      "codigo_oculto": "A3D8839C"
+    }
+  },
+  "tema_22": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2913.0,
+      "codigo_oculto": "FFF409EE"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.187,
+      "codigo_oculto": "A6556ADB"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 333.0,
+      "codigo_oculto": "34919D90"
+    }
+  },
+  "tema_23": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2657.0,
+      "codigo_oculto": "0F0D9C37"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1732,
+      "codigo_oculto": "F29C0687"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 273.0,
+      "codigo_oculto": "DB2AC839"
+    }
+  },
+  "tema_24": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2669.0,
+      "codigo_oculto": "B76DF956"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.159,
+      "codigo_oculto": "B6D976B7"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 232.0,
+      "codigo_oculto": "A36027CE"
+    }
+  },
+  "tema_25": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2934.0,
+      "codigo_oculto": "FF5CCCFC"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.194,
+      "codigo_oculto": "3EA81E46"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 366.0,
+      "codigo_oculto": "951F1B90"
+    }
+  },
+  "tema_26": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2267.0,
+      "codigo_oculto": "35415D6A"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.136,
+      "codigo_oculto": "7F0582A5"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 329.0,
+      "codigo_oculto": "D08590C4"
+    }
+  },
+  "tema_27": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2555.0,
+      "codigo_oculto": "1D9B0543"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1562,
+      "codigo_oculto": "FFD5258D"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 178.0,
+      "codigo_oculto": "5312D343"
+    }
+  },
+  "tema_28": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2822.0,
+      "codigo_oculto": "0EDFFABC"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1933,
+      "codigo_oculto": "5135F808"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 341.0,
+      "codigo_oculto": "1A566B4D"
+    }
+  },
+  "tema_29": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2725.0,
+      "codigo_oculto": "6CC75781"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.1945,
+      "codigo_oculto": "3545D8D9"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 249.0,
+      "codigo_oculto": "84B7815F"
+    }
+  },
+  "tema_30": {
+    "limpiar_nulos": {
+      "inputs": {},
+      "expected": 2500.0,
+      "codigo_oculto": "520B7E92"
+    },
+    "nueva_moneda": {
+      "inputs": {},
+      "expected": 0.14,
+      "codigo_oculto": "B7CA8BC8"
+    },
+    "reporte_pares": {
+      "inputs": {},
+      "expected": 209.0,
+      "codigo_oculto": "F58DF84A"
+    }
+  }
+}
