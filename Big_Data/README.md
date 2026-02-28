@@ -33,7 +33,7 @@
 - [Tema 9](./Taller_1/Tema_9.md)
 
 ---
-### 📝 Taller 2 (Asignado: 27/02/2026)
+### 📝 Taller 2 (Asignado: 28/02/2026)
 - [Tema 1](./Taller_2/Tema_1.md)
 - [Tema 10](./Taller_2/Tema_10.md)
 - [Tema 11](./Taller_2/Tema_11.md)

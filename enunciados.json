@@ -700,7 +700,7 @@
                     "**10. RETO FINAL (Filtrado Avanzado):** Defina la función `reporte_pares(df)`. \n   a) Identifique los meses pares usando el operador módulo en el índice: `df.index.month % 2 == 0`. \n   b) Filtre la tabla original con esa condición. \n   c) Sume los valores de la columna 'Col3' de esa tabla filtrada y use `return` para devolver el resultado. \n   **[9] ¿Cuánto es la suma de la columna 'Col3'?**   **Valide con evafunciones para obtener su código de éxito.**[10]¿Cuál es el código de la validación?**"
                 ]
             },
-            "fecha": "27/02/2026",
+            "fecha": "28/02/2026",
             "subtitulo": "Introducción a la Librería Pandas",
             "instruccion": "Para realizar este taller, asegúrate de tener instalada las librerías numpy, pandas y calificar. \n\n\n    #!pip install calificar\n    #Librerias para el Taller\n    import calificar as cr\n    import numpy as np\n    import pandas as pd\n    \n    Taller2=cr.taller('1026',1, 'taller2BD2026i',11)\n    \n    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'\n    #Se cambia 1 por el Número de su Grupo asignado. \n\n    \n\n    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_2\n    "
         }

@@ -3,12 +3,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2535.0,
-      "codigo_oculto": "699C32BB"
+      "codigo_oculto": "7001"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1665,
-      "codigo_oculto": "AE4992FF"
+      "codigo_oculto": "8001"
     },
     "reporte_pares": {
       "inputs": {},
@@ -20,12 +20,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2704.0,
-      "codigo_oculto": "A22B2910"
+      "codigo_oculto": "7002"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1522,
-      "codigo_oculto": "AE87D532"
+      "codigo_oculto": "8002"
     },
     "reporte_pares": {
       "inputs": {},
@@ -37,12 +37,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2538.0,
-      "codigo_oculto": "7EA60BEB"
+      "codigo_oculto": "7003"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1903,
-      "codigo_oculto": "CC13C5B8"
+      "codigo_oculto": "8003"
     },
     "reporte_pares": {
       "inputs": {},
@@ -54,12 +54,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2711.0,
-      "codigo_oculto": "D0AABBDB"
+      "codigo_oculto": "7004"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1535,
-      "codigo_oculto": "5E3E30E0"
+      "codigo_oculto": "8004"
     },
     "reporte_pares": {
       "inputs": {},
@@ -71,12 +71,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2204.0,
-      "codigo_oculto": "2720E59E"
+      "codigo_oculto": "7005"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.141,
-      "codigo_oculto": "8761B760"
+      "codigo_oculto": "8005"
     },
     "reporte_pares": {
       "inputs": {},
@@ -88,12 +88,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2454.0,
-      "codigo_oculto": "8E5734E1"
+      "codigo_oculto": "7006"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1495,
-      "codigo_oculto": "2175A4EC"
+      "codigo_oculto": "8006"
     },
     "reporte_pares": {
       "inputs": {},
@@ -105,12 +105,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2350.0,
-      "codigo_oculto": "2D7A9465"
+      "codigo_oculto": "7007"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1608,
-      "codigo_oculto": "F8B2DA7D"
+      "codigo_oculto": "8007"
     },
     "reporte_pares": {
       "inputs": {},
@@ -122,12 +122,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2568.0,
-      "codigo_oculto": "641DD5CC"
+      "codigo_oculto": "7008"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1565,
-      "codigo_oculto": "9E7A15ED"
+      "codigo_oculto": "8008"
     },
     "reporte_pares": {
       "inputs": {},
@@ -139,12 +139,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2649.0,
-      "codigo_oculto": "F345D7E9"
+      "codigo_oculto": "7009"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1758,
-      "codigo_oculto": "154A6CE3"
+      "codigo_oculto": "8009"
     },
     "reporte_pares": {
       "inputs": {},
@@ -156,12 +156,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2722.0,
-      "codigo_oculto": "58E5EFB2"
+      "codigo_oculto": "7010"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.159,
-      "codigo_oculto": "CE3F4957"
+      "codigo_oculto": "8010"
     },
     "reporte_pares": {
       "inputs": {},
@@ -173,12 +173,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2397.0,
-      "codigo_oculto": "FD0AC328"
+      "codigo_oculto": "7011"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1313,
-      "codigo_oculto": "E8118357"
+      "codigo_oculto": "8011"
     },
     "reporte_pares": {
       "inputs": {},
@@ -190,12 +190,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2699.0,
-      "codigo_oculto": "3DC9B3FD"
+      "codigo_oculto": "7012"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1655,
-      "codigo_oculto": "AB97E176"
+      "codigo_oculto": "8012"
     },
     "reporte_pares": {
       "inputs": {},
@@ -207,12 +207,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2823.0,
-      "codigo_oculto": "30EDB204"
+      "codigo_oculto": "7013"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1505,
-      "codigo_oculto": "7654844A"
+      "codigo_oculto": "8013"
     },
     "reporte_pares": {
       "inputs": {},
@@ -224,12 +224,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2472.0,
-      "codigo_oculto": "E116F727"
+      "codigo_oculto": "7014"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1547,
-      "codigo_oculto": "923886AE"
+      "codigo_oculto": "8014"
     },
     "reporte_pares": {
       "inputs": {},
@@ -241,12 +241,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2799.0,
-      "codigo_oculto": "4E27503D"
+      "codigo_oculto": "7015"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.193,
-      "codigo_oculto": "C70E36F3"
+      "codigo_oculto": "8015"
     },
     "reporte_pares": {
       "inputs": {},
@@ -258,12 +258,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2609.0,
-      "codigo_oculto": "48F340D2"
+      "codigo_oculto": "7016"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1638,
-      "codigo_oculto": "1F170A43"
+      "codigo_oculto": "8016"
     },
     "reporte_pares": {
       "inputs": {},
@@ -275,12 +275,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2537.0,
-      "codigo_oculto": "895A7AD4"
+      "codigo_oculto": "7017"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1653,
-      "codigo_oculto": "A6A8DF24"
+      "codigo_oculto": "8017"
     },
     "reporte_pares": {
       "inputs": {},
@@ -292,12 +292,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2558.0,
-      "codigo_oculto": "11A1128B"
+      "codigo_oculto": "7018"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1773,
-      "codigo_oculto": "536C56F7"
+      "codigo_oculto": "8018"
     },
     "reporte_pares": {
       "inputs": {},
@@ -309,12 +309,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2888.0,
-      "codigo_oculto": "2051EE59"
+      "codigo_oculto": "7019"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1533,
-      "codigo_oculto": "DC3A5CC2"
+      "codigo_oculto": "8019"
     },
     "reporte_pares": {
       "inputs": {},
@@ -326,12 +326,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2332.0,
-      "codigo_oculto": "FA5FD055"
+      "codigo_oculto": "7020"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1423,
-      "codigo_oculto": "0FFFE503"
+      "codigo_oculto": "8020"
     },
     "reporte_pares": {
       "inputs": {},
@@ -343,12 +343,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2485.0,
-      "codigo_oculto": "5EF4CEA1"
+      "codigo_oculto": "7021"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1585,
-      "codigo_oculto": "CAE07258"
+      "codigo_oculto": "8021"
     },
     "reporte_pares": {
       "inputs": {},
@@ -360,12 +360,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2913.0,
-      "codigo_oculto": "FFF409EE"
+      "codigo_oculto": "7022"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.187,
-      "codigo_oculto": "A6556ADB"
+      "codigo_oculto": "8022"
     },
     "reporte_pares": {
       "inputs": {},
@@ -377,12 +377,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2657.0,
-      "codigo_oculto": "0F0D9C37"
+      "codigo_oculto": "7023"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1732,
-      "codigo_oculto": "F29C0687"
+      "codigo_oculto": "8023"
     },
     "reporte_pares": {
       "inputs": {},
@@ -394,12 +394,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2669.0,
-      "codigo_oculto": "B76DF956"
+      "codigo_oculto": "7024"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.159,
-      "codigo_oculto": "B6D976B7"
+      "codigo_oculto": "8024"
     },
     "reporte_pares": {
       "inputs": {},
@@ -411,12 +411,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2934.0,
-      "codigo_oculto": "FF5CCCFC"
+      "codigo_oculto": "7025"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.194,
-      "codigo_oculto": "3EA81E46"
+      "codigo_oculto": "8025"
     },
     "reporte_pares": {
       "inputs": {},
@@ -428,12 +428,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2267.0,
-      "codigo_oculto": "35415D6A"
+      "codigo_oculto": "7026"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.136,
-      "codigo_oculto": "7F0582A5"
+      "codigo_oculto": "8026"
     },
     "reporte_pares": {
       "inputs": {},
@@ -445,12 +445,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2555.0,
-      "codigo_oculto": "1D9B0543"
+      "codigo_oculto": "7027"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1562,
-      "codigo_oculto": "FFD5258D"
+      "codigo_oculto": "8027"
     },
     "reporte_pares": {
       "inputs": {},
@@ -462,12 +462,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2822.0,
-      "codigo_oculto": "0EDFFABC"
+      "codigo_oculto": "7028"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1933,
-      "codigo_oculto": "5135F808"
+      "codigo_oculto": "8028"
     },
     "reporte_pares": {
       "inputs": {},
@@ -479,12 +479,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2725.0,
-      "codigo_oculto": "6CC75781"
+      "codigo_oculto": "7029"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.1945,
-      "codigo_oculto": "3545D8D9"
+      "codigo_oculto": "8029"
     },
     "reporte_pares": {
       "inputs": {},
@@ -496,12 +496,12 @@
     "limpiar_nulos": {
       "inputs": {},
       "expected": 2500.0,
-      "codigo_oculto": "520B7E92"
+      "codigo_oculto": "7030"
     },
     "nueva_moneda": {
       "inputs": {},
       "expected": 0.14,
-      "codigo_oculto": "B7CA8BC8"
+      "codigo_oculto": "8030"
     },
     "reporte_pares": {
       "inputs": {},
