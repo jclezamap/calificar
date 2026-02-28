@@ -1,36 +1,39 @@
+# --- REGLA DE ORO ---
+# El prefijo "/" indica que el bloqueo aplica SOLO a la carpeta principal (root)
+
 # --- PYTHON ---
-# Archivos compilados y caché
 __pycache__/
 *.py[cod]
-*$py.class
-.pytest_cache/
 .ipynb_checkpoints/
 
-# --- ARCHIVOS SENSIBLES Y DATOS (Personalizado para tu curso) ---
-# No publicar los scripts .py de la carpeta principal que generan los talleres
+# --- SCRIPTS DE GENERACIÓN (Solo en la raíz) ---
+# Esto ignora los .py que crean los talleres, pero permite los .py dentro de carpetas
 /*.py
-# No publicar archivos de datos o modelos
-*.pkl
-*.csv
-*.xlsx
-*.sqlite
 
-# --- DISTRIBUCIÓN Y EMPAQUETADO ---
-# Carpetas que genera Python al crear la librería
+# --- ARCHIVOS DE DATOS (Solo en la raíz) ---
+# Evita que se suban copias locales de los datos en la carpeta principal
+/*.pkl
+/*.csv
+/*.xlsx
+/*.sqlite
+/*.json
+
+# --- CARPETAS DE DISTRIBUCIÓN ---
+# Estas suelen estar solo en la raíz y no queremos ninguna en ningún lado
 dist/
 build/
 *.egg-info/
-lib/
-bin/
 
 # --- ENTORNOS VIRTUALES ---
 venv/
 .venv/
 env/
-ENV/
 
 # --- SISTEMA Y EDITORES ---
 .DS_Store
 .vscode/
 .idea/
-*.swp
+
+# --- EXCEPCIONES ---
+# Si quieres que un archivo específico en la raíz SÍ se suba, lo desbloqueas así:
+# !/setup.py
