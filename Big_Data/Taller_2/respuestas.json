@@ -13,7 +13,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 410.0,
-      "codigo_oculto": "8F9DA67E"
+      "codigo_oculto": "3001"
     }
   },
   "tema_2": {
@@ -30,7 +30,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 367.0,
-      "codigo_oculto": "08CBACAE"
+      "codigo_oculto": "3002"
     }
   },
   "tema_3": {
@@ -47,7 +47,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 329.0,
-      "codigo_oculto": "54F22E59"
+      "codigo_oculto": "3003"
     }
   },
   "tema_4": {
@@ -64,7 +64,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 295.0,
-      "codigo_oculto": "FDEC5497"
+      "codigo_oculto": "3004"
     }
   },
   "tema_5": {
@@ -81,7 +81,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 291.0,
-      "codigo_oculto": "ED99B7CF"
+      "codigo_oculto": "3005"
     }
   },
   "tema_6": {
@@ -98,7 +98,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 360.0,
-      "codigo_oculto": "9D16A97A"
+      "codigo_oculto": "3006"
     }
   },
   "tema_7": {
@@ -115,7 +115,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 296.0,
-      "codigo_oculto": "3BB84C2B"
+      "codigo_oculto": "3007"
     }
   },
   "tema_8": {
@@ -132,7 +132,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 396.0,
-      "codigo_oculto": "3D6CA381"
+      "codigo_oculto": "3008"
     }
   },
   "tema_9": {
@@ -149,7 +149,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 403.0,
-      "codigo_oculto": "FBAFB419"
+      "codigo_oculto": "3009"
     }
   },
   "tema_10": {
@@ -166,7 +166,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 356.0,
-      "codigo_oculto": "C20B642F"
+      "codigo_oculto": "3010"
     }
   },
   "tema_11": {
@@ -183,7 +183,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 452.0,
-      "codigo_oculto": "E89F1025"
+      "codigo_oculto": "3011"
     }
   },
   "tema_12": {
@@ -200,7 +200,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 289.0,
-      "codigo_oculto": "EFD97427"
+      "codigo_oculto": "3012"
     }
   },
   "tema_13": {
@@ -217,7 +217,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 323.0,
-      "codigo_oculto": "187AEC5A"
+      "codigo_oculto": "3013"
     }
   },
   "tema_14": {
@@ -234,7 +234,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 283.0,
-      "codigo_oculto": "6ECC6668"
+      "codigo_oculto": "3014"
     }
   },
   "tema_15": {
@@ -251,7 +251,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 346.0,
-      "codigo_oculto": "D17D725D"
+      "codigo_oculto": "3015"
     }
   },
   "tema_16": {
@@ -268,7 +268,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 290.0,
-      "codigo_oculto": "77E93299"
+      "codigo_oculto": "3016"
     }
   },
   "tema_17": {
@@ -285,7 +285,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 274.0,
-      "codigo_oculto": "B32761B1"
+      "codigo_oculto": "3017"
     }
   },
   "tema_18": {
@@ -302,7 +302,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 284.0,
-      "codigo_oculto": "D2DBBC80"
+      "codigo_oculto": "3018"
     }
   },
   "tema_19": {
@@ -319,7 +319,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 408.0,
-      "codigo_oculto": "11BD3CFD"
+      "codigo_oculto": "3019"
     }
   },
   "tema_20": {
@@ -336,7 +336,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 246.0,
-      "codigo_oculto": "93EB3D25"
+      "codigo_oculto": "3020"
     }
   },
   "tema_21": {
@@ -353,7 +353,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 307.0,
-      "codigo_oculto": "A3D8839C"
+      "codigo_oculto": "3021"
     }
   },
   "tema_22": {
@@ -370,7 +370,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 333.0,
-      "codigo_oculto": "34919D90"
+      "codigo_oculto": "3022"
     }
   },
   "tema_23": {
@@ -387,7 +387,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 273.0,
-      "codigo_oculto": "DB2AC839"
+      "codigo_oculto": "3023"
     }
   },
   "tema_24": {
@@ -404,7 +404,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 232.0,
-      "codigo_oculto": "A36027CE"
+      "codigo_oculto": "3024"
     }
   },
   "tema_25": {
@@ -421,7 +421,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 366.0,
-      "codigo_oculto": "951F1B90"
+      "codigo_oculto": "3025"
     }
   },
   "tema_26": {
@@ -438,7 +438,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 329.0,
-      "codigo_oculto": "D08590C4"
+      "codigo_oculto": "3026"
     }
   },
   "tema_27": {
@@ -455,7 +455,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 178.0,
-      "codigo_oculto": "5312D343"
+      "codigo_oculto": "3027"
     }
   },
   "tema_28": {
@@ -472,7 +472,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 341.0,
-      "codigo_oculto": "1A566B4D"
+      "codigo_oculto": "3028"
     }
   },
   "tema_29": {
@@ -489,7 +489,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 249.0,
-      "codigo_oculto": "84B7815F"
+      "codigo_oculto": "3029"
     }
   },
   "tema_30": {
@@ -506,7 +506,7 @@
     "reporte_pares": {
       "inputs": {},
       "expected": 209.0,
-      "codigo_oculto": "F58DF84A"
+      "codigo_oculto": "3030"
     }
   }
 }
