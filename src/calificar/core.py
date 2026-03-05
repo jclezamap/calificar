@@ -79,42 +79,36 @@ class evafunciones:
 
     def _cargar_respuestas(self):
         try:
+            # Se descarga el JSON de respuestas del profesor
             r = requests.get(f"{self.url_base}/respuestas.json", timeout=10)
-            r.raise_for_status() # Asegura que la URL sea válida
+            r.raise_for_status() 
             return r.json()
         except Exception as e:
             print(f"❌ Error al cargar respuestas: {e}")
             return None
 
     def _generar_verificador(self, n_secreto, salt="2026i"):
-        # Crea el código alfanumérico que el alumno te debe entregar
+        # Genera el código hash final para el estudiante
         hash_obj = hashlib.sha256(f"{n_secreto}{salt}{self.num_tema}".encode())
         return hash_obj.hexdigest()[:8].upper()
 
-    def obtener_funcion_estudiante(self,nombre_funcion):
-        # 1. Intentamos obtener el módulo desde el stack
+    def obtener_funcion_estudiante(self, nombre_funcion):
+        # Busca la función definida por el alumno en su entorno local
         frame = inspect.stack()[1]
         modulo = inspect.getmodule(frame[0])
-        
-        # 2. Intentamos buscar en el módulo detectado
         funcion = getattr(modulo, nombre_funcion, None)
         
-        # 3. Si no aparece (común en Jupyter o ejecuciones directas), 
-        # buscamos en el diccionario global del script principal
         if funcion is None:
             main_mod = sys.modules.get('__main__')
             funcion = getattr(main_mod, nombre_funcion, None)
             
         return funcion
-    
-
 
     def validar(self, nombre_funcion):
         if not self.respuestas:
             print("❌ No hay respuestas cargadas.")
             return
 
-        # 1. Obtener datos del JSON
         tema_data = self.respuestas.get(self.num_tema)
         if not tema_data:
             print(f"❌ No existe el {self.num_tema} en el JSON.")
@@ -129,19 +123,31 @@ class evafunciones:
         esperado_raw = datos_reto['expected']
         codigo_base = datos_reto.get('codigo_oculto', '0000')
 
-        # 2. Obtener función del estudiante
+        # --- AJUSTE: CONVERSIÓN Y EXTRACCIÓN POR POSICIÓN ---
+        lista_argumentos = []
+        for valor in inputs_del_reto.values():
+            if isinstance(valor, dict):
+                # Convertimos el diccionario del JSON en un DataFrame real
+                lista_argumentos.append(pd.DataFrame(valor))
+            else:
+                lista_argumentos.append(valor)
+        # ----------------------------------------------------
+
         funcion_estudiante = self.obtener_funcion_estudiante(nombre_funcion)
          
         if not funcion_estudiante:
-            print(f"❌ No se encontró la función '{nombre_funcion}' en el código.")
+            print(f"❌ No se encontró la función '{nombre_funcion}' definida.")
             return
         
         try:
-            # Ejecutar la función del estudiante con los inputs del JSON
-            resultado_estudiante = funcion_estudiante(**inputs_del_reto)
+            # --- CAMBIO CLAVE ---
+            # Pasamos los argumentos por POSICIÓN (*lista_argumentos)
+            # Esto ignora si el alumno llamó al parámetro 'df', 'df_retos' o 'x'
+            resultado_estudiante = funcion_estudiante(*lista_argumentos)
+            
             es_correcto = False
 
-            # 3. VALIDACIÓN DE DATAFRAME TRANSFORMADO
+            # Validación de DataFrames
             if isinstance(resultado_estudiante, pd.DataFrame):
                 df_esperado = pd.DataFrame(esperado_raw)
                 pd.testing.assert_frame_equal(
@@ -154,27 +160,26 @@ class evafunciones:
                 )
                 es_correcto = True
             
+            # Validación de Series
             elif isinstance(resultado_estudiante, pd.Series):
                 serie_esperada = pd.Series(esperado_raw)
                 pd.testing.assert_series_equal(resultado_estudiante, serie_esperada, check_dtype=False)
                 es_correcto = True
                 
+            # Validación de escalares (números)
             else:
-                # Comparación para números o listas
                 es_correcto = np.allclose(resultado_estudiante, esperado_raw, atol=1e-5)
 
             if es_correcto:
-                # 4. ÉXITO: Generar código secreto
                 codigo_final = self._generar_verificador(codigo_base)
-                print(f"✅ ¡Transformación correcta para '{nombre_funcion}'!")
-                print(f"🔢 TU CÓDIGO DE VALIDACIÓN: {codigo_final}")
+                print(f"✅ ¡Validación exitosa para '{nombre_funcion}'!")
+                print(f"🔢 TU CÓDIGO DE ÉXITO: {codigo_final}")
                 return codigo_final
                 
-        except AssertionError as e:
-            print(f"❌ El resultado de '{nombre_funcion}' no coincide con el esperado.")
-            # Limpiamos el mensaje de error de Pandas para que sea legible
-            detalle = str(e).split('\n')[0]
-            print(f"ℹ️ Detalle: {detalle}")
+        except AssertionError:
+            print(f"❌ El resultado de '{nombre_funcion}' no coincide con lo esperado.")
+        except TypeError as e:
+            print(f"⚠️ Error de argumentos: Revisa que la función reciba el número correcto de parámetros.")
+            print(f"ℹ️ Detalle: {e}")
         except Exception as e:
-            print(f"⚠️ Error al ejecutar tu función: {type(e).__name__}: {e}")
-            
+            print(f"⚠️ Error al ejecutar la función: {type(e).__name__}: {e}")
