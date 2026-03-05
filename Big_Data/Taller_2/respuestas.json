@@ -2,7 +2,7 @@
   "tema_1": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2535.0,
+      "expected": 19.0,
       "codigo_oculto": "7001"
     },
     "nueva_moneda": {
@@ -19,12 +19,12 @@
   "tema_2": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2704.0,
+      "expected": 19.0,
       "codigo_oculto": "7002"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1522,
+      "expected": 0.15225,
       "codigo_oculto": "8002"
     },
     "reporte_pares": {
@@ -36,12 +36,12 @@
   "tema_3": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2538.0,
+      "expected": 19.0,
       "codigo_oculto": "7003"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1903,
+      "expected": 0.19025,
       "codigo_oculto": "8003"
     },
     "reporte_pares": {
@@ -53,7 +53,7 @@
   "tema_4": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2711.0,
+      "expected": 19.0,
       "codigo_oculto": "7004"
     },
     "nueva_moneda": {
@@ -70,12 +70,12 @@
   "tema_5": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2204.0,
+      "expected": 19.0,
       "codigo_oculto": "7005"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.141,
+      "expected": 0.14100000000000001,
       "codigo_oculto": "8005"
     },
     "reporte_pares": {
@@ -87,12 +87,12 @@
   "tema_6": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2454.0,
+      "expected": 19.0,
       "codigo_oculto": "7006"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1495,
+      "expected": 0.14950000000000002,
       "codigo_oculto": "8006"
     },
     "reporte_pares": {
@@ -104,12 +104,12 @@
   "tema_7": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2350.0,
+      "expected": 19.0,
       "codigo_oculto": "7007"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1608,
+      "expected": 0.16075,
       "codigo_oculto": "8007"
     },
     "reporte_pares": {
@@ -121,7 +121,7 @@
   "tema_8": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2568.0,
+      "expected": 19.0,
       "codigo_oculto": "7008"
     },
     "nueva_moneda": {
@@ -138,12 +138,12 @@
   "tema_9": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2649.0,
+      "expected": 19.0,
       "codigo_oculto": "7009"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1758,
+      "expected": 0.17575000000000002,
       "codigo_oculto": "8009"
     },
     "reporte_pares": {
@@ -155,7 +155,7 @@
   "tema_10": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2722.0,
+      "expected": 19.0,
       "codigo_oculto": "7010"
     },
     "nueva_moneda": {
@@ -172,12 +172,12 @@
   "tema_11": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2397.0,
+      "expected": 19.0,
       "codigo_oculto": "7011"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1313,
+      "expected": 0.13125,
       "codigo_oculto": "8011"
     },
     "reporte_pares": {
@@ -189,12 +189,12 @@
   "tema_12": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2699.0,
+      "expected": 19.0,
       "codigo_oculto": "7012"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1655,
+      "expected": 0.16550000000000004,
       "codigo_oculto": "8012"
     },
     "reporte_pares": {
@@ -206,12 +206,12 @@
   "tema_13": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2823.0,
+      "expected": 19.0,
       "codigo_oculto": "7013"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1505,
+      "expected": 0.15050000000000002,
       "codigo_oculto": "8013"
     },
     "reporte_pares": {
@@ -223,12 +223,12 @@
   "tema_14": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2472.0,
+      "expected": 19.0,
       "codigo_oculto": "7014"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1547,
+      "expected": 0.15475,
       "codigo_oculto": "8014"
     },
     "reporte_pares": {
@@ -240,7 +240,7 @@
   "tema_15": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2799.0,
+      "expected": 19.0,
       "codigo_oculto": "7015"
     },
     "nueva_moneda": {
@@ -257,12 +257,12 @@
   "tema_16": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2609.0,
+      "expected": 19.0,
       "codigo_oculto": "7016"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1638,
+      "expected": 0.16375,
       "codigo_oculto": "8016"
     },
     "reporte_pares": {
@@ -274,12 +274,12 @@
   "tema_17": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2537.0,
+      "expected": 19.0,
       "codigo_oculto": "7017"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1653,
+      "expected": 0.16525,
       "codigo_oculto": "8017"
     },
     "reporte_pares": {
@@ -291,12 +291,12 @@
   "tema_18": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2558.0,
+      "expected": 19.0,
       "codigo_oculto": "7018"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1773,
+      "expected": 0.17725000000000002,
       "codigo_oculto": "8018"
     },
     "reporte_pares": {
@@ -308,12 +308,12 @@
   "tema_19": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2888.0,
+      "expected": 19.0,
       "codigo_oculto": "7019"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1533,
+      "expected": 0.15325000000000003,
       "codigo_oculto": "8019"
     },
     "reporte_pares": {
@@ -325,12 +325,12 @@
   "tema_20": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2332.0,
+      "expected": 19.0,
       "codigo_oculto": "7020"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1423,
+      "expected": 0.14225000000000002,
       "codigo_oculto": "8020"
     },
     "reporte_pares": {
@@ -342,7 +342,7 @@
   "tema_21": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2485.0,
+      "expected": 19.0,
       "codigo_oculto": "7021"
     },
     "nueva_moneda": {
@@ -359,7 +359,7 @@
   "tema_22": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2913.0,
+      "expected": 19.0,
       "codigo_oculto": "7022"
     },
     "nueva_moneda": {
@@ -376,12 +376,12 @@
   "tema_23": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2657.0,
+      "expected": 19.0,
       "codigo_oculto": "7023"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1732,
+      "expected": 0.17325,
       "codigo_oculto": "8023"
     },
     "reporte_pares": {
@@ -393,12 +393,12 @@
   "tema_24": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2669.0,
+      "expected": 19.0,
       "codigo_oculto": "7024"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.159,
+      "expected": 0.15900000000000003,
       "codigo_oculto": "8024"
     },
     "reporte_pares": {
@@ -410,7 +410,7 @@
   "tema_25": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2934.0,
+      "expected": 19.0,
       "codigo_oculto": "7025"
     },
     "nueva_moneda": {
@@ -427,7 +427,7 @@
   "tema_26": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2267.0,
+      "expected": 19.0,
       "codigo_oculto": "7026"
     },
     "nueva_moneda": {
@@ -444,12 +444,12 @@
   "tema_27": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2555.0,
+      "expected": 19.0,
       "codigo_oculto": "7027"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1562,
+      "expected": 0.15624999999999997,
       "codigo_oculto": "8027"
     },
     "reporte_pares": {
@@ -461,12 +461,12 @@
   "tema_28": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2822.0,
+      "expected": 19.0,
       "codigo_oculto": "7028"
     },
     "nueva_moneda": {
       "inputs": {},
-      "expected": 0.1933,
+      "expected": 0.19325,
       "codigo_oculto": "8028"
     },
     "reporte_pares": {
@@ -478,7 +478,7 @@
   "tema_29": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2725.0,
+      "expected": 19.0,
       "codigo_oculto": "7029"
     },
     "nueva_moneda": {
@@ -495,7 +495,7 @@
   "tema_30": {
     "limpiar_nulos": {
       "inputs": {},
-      "expected": 2500.0,
+      "expected": 19.0,
       "codigo_oculto": "7030"
     },
     "nueva_moneda": {
