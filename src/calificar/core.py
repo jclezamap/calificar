@@ -72,85 +72,79 @@ class taller:
 
 
 class evafunciones:
-    def __init__(self, url_repo, num_tema):
-        self.url = url_repo
+    def __init__(self, url_base, num_tema):
+        self.url = url_base.rstrip('/') + '/respuestas.json'
         self.num_tema = f"tema_{num_tema}"
         self.respuestas = self._cargar_respuestas()
 
     def _cargar_respuestas(self):
         try:
-            response = requests.get(self.url)
+            raw_url = self.url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+            response = requests.get(raw_url)
             return response.json()
         except Exception as e:
             print(f"❌ Error al cargar el JSON: {e}")
             return None
 
     def validar(self, nombre_funcion):
-        if not self.respuestas:
-            return "Error de conexión"
-
+        if not self.respuestas: return None
+        
         tema_data = self.respuestas.get(self.num_tema)
-        datos_reto = tema_data.get(nombre_funcion)
-        inputs_raw = datos_reto['inputs']
-        esperado_raw = datos_reto['expected']
-        codigo_exito = datos_reto['codigo_oculto']
+        reto = tema_data.get(nombre_funcion)
+        if not reto: return None
 
-        # 1. RECONSTRUIR INPUTS (Detección de Fecha/Periodo)
-        args_para_estudiante = []
+        meta = reto.get('meta', {})
+        inputs_raw = reto['inputs']
+        esperado_raw = reto['expected']
+        codigo_exito = reto['codigo_oculto']
+
+        # 1. PREPARAR INPUTS
+        args_est = []
         for val in inputs_raw.values():
             if isinstance(val, dict):
-                df_input = pd.DataFrame(val)
-                # Buscamos columnas temporales
-                cols_t = [c for c in df_input.columns if c.lower() in ['fecha', 'periodo'] or 'fecha' in c.lower()]
-                if cols_t:
-                    df_input[cols_t[0]] = pd.to_datetime(df_input[cols_t[0]])
-                    df_input.set_index(cols_t[0], inplace=True)
-                    df_input.index.name = 'Fecha'
-                args_para_estudiante.append(df_input)
+                df_in = pd.DataFrame(val)
+                if meta.get('index_col'):
+                    col_idx = meta['index_col']
+                    if meta.get('is_datetime'):
+                        df_in[col_idx] = pd.to_datetime(df_in[col_idx])
+                    df_in.set_index(col_idx, inplace=True)
+                args_est.append(df_in)
             else:
-                args_para_estudiante.append(val)
+                args_est.append(val)
 
-        # 2. EJECUTAR FUNCIÓN DEL ESTUDIANTE
+        # 2. EJECUCIÓN Y VALIDACIÓN
         try:
             import __main__
             func = getattr(__main__, nombre_funcion)
-            resultado_estudiante = func(*args_para_estudiante)
+            res_est = func(*args_est)
             
-            # 3. VALIDACIÓN ESPECIAL PARA DATAFRAMES
-            if isinstance(resultado_estudiante, pd.DataFrame):
-                df_esperado = pd.DataFrame(esperado_raw)
-                
-                # Normalizar fechas en el esperado si existen
-                cols_e = [c for c in df_esperado.columns if c.lower() in ['fecha', 'periodo'] or 'fecha' in c.lower()]
-                if cols_e:
-                    df_esperado[cols_e[0]] = pd.to_datetime(df_esperado[cols_e[0]])
-                    df_esperado.set_index(cols_e[0], inplace=True)
-                    df_esperado.index.name = 'Fecha'
-
-                # --- ELIMINAR ERROR DE ÍNDICES Y SHAPE ---
-                # Forzamos al esperado a tener el MISMO índice que el alumno para comparar solo DATA
-                if len(df_esperado) == len(resultado_estudiante):
-                    df_esperado.index = resultado_estudiante.index
-                
-                pd.testing.assert_frame_equal(
-                    resultado_estudiante, 
-                    df_esperado, 
-                    check_dtype=False,
-                    check_column_type=False,
-                    check_like=True 
-                )
-                print(f"✅ ¡Correcto! Código: {codigo_exito}")
-                return codigo_exito
-
-            # VALIDACIÓN PARA ESCALARES (reporte_pares)
-            elif isinstance(resultado_estudiante, (int, float, np.number)):
-                if np.isclose(resultado_estudiante, float(esperado_raw)):
+            # --- CASO A: ESCALARES (Números simples) ---
+            if meta.get('type') == 'scalar' or isinstance(res_est, (int, float, np.number)):
+                if np.isclose(float(res_est), float(esperado_raw)):
                     print(f"✅ ¡Correcto! Código: {codigo_exito}")
                     return codigo_exito
 
-        except AssertionError as e:
-            print(f"⚠️ Error: Los datos no coinciden.\nℹ️ Detalle: {e}")
+            # --- CASO B: SERIES ---
+            elif isinstance(res_est, pd.Series):
+                ser_esp = pd.Series(esperado_raw)
+                # Sincronizar índice si es necesario
+                if len(ser_esp) == len(res_est):
+                    ser_esp.index = res_est.index
+                
+                pd.testing.assert_series_equal(res_est, ser_esp, check_dtype=False, check_names=False)
+                print(f"✅ ¡Correcto! Código: {codigo_exito}")
+                return codigo_exito
+
+            # --- CASO C: DATAFRAMES ---
+            elif isinstance(res_est, pd.DataFrame):
+                df_esp = pd.DataFrame(esperado_raw)
+                if meta.get('index_col') and len(df_esp) == len(res_est):
+                    df_esp.index = res_est.index
+
+                pd.testing.assert_frame_equal(res_est, df_esp, check_dtype=False, check_like=True)
+                print(f"✅ ¡Correcto! Código: {codigo_exito}")
+                return codigo_exito
+
         except Exception as e:
-            print(f"⚠️ Error inesperado: {e}")
-        
+            print(f"⚠️ Error en '{nombre_funcion}': {e}")
         return None

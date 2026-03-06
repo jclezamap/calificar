@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: calificar
-Version: 0.1.9
+Version: 0.1.10
 Summary: Permite calificar talleres a través de Python
 Author-email: Juan Carlos Lezama <jclezamap@gmail.com>
 Requires-Python: >=3.7

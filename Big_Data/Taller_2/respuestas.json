@@ -2,7 +2,7 @@
   "tema_1": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -19,11 +19,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7001"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -88,11 +92,16 @@
           0.02275
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8001"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -166,13 +175,18 @@
         }
       },
       "expected": 410.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3001"
     }
   },
   "tema_2": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -189,11 +203,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7002"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -258,11 +276,16 @@
           0.005
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8002"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -336,13 +359,18 @@
         }
       },
       "expected": 367.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3002"
     }
   },
   "tema_3": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -359,11 +387,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7003"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -428,11 +460,16 @@
           0.019
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8003"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -506,13 +543,18 @@
         }
       },
       "expected": 329.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3003"
     }
   },
   "tema_4": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -529,11 +571,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7004"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -598,11 +644,16 @@
           0.00625
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8004"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -676,13 +727,18 @@
         }
       },
       "expected": 295.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3004"
     }
   },
   "tema_5": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -699,11 +755,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7005"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -768,11 +828,16 @@
           0.00725
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8005"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -846,13 +911,18 @@
         }
       },
       "expected": 291.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3005"
     }
   },
   "tema_6": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -869,11 +939,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7006"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -938,11 +1012,16 @@
           0.01325
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8006"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1016,13 +1095,18 @@
         }
       },
       "expected": 360.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3006"
     }
   },
   "tema_7": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1039,11 +1123,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7007"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1108,11 +1196,16 @@
           0.021
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8007"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1186,13 +1279,18 @@
         }
       },
       "expected": 296.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3007"
     }
   },
   "tema_8": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1209,11 +1307,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7008"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1278,11 +1380,16 @@
           0.0035
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8008"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1356,13 +1463,18 @@
         }
       },
       "expected": 396.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3008"
     }
   },
   "tema_9": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1379,11 +1491,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7009"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1448,11 +1564,16 @@
           0.0215
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8009"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1526,13 +1647,18 @@
         }
       },
       "expected": 403.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3009"
     }
   },
   "tema_10": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1549,11 +1675,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7010"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1618,11 +1748,16 @@
           0.012
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8010"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1696,13 +1831,18 @@
         }
       },
       "expected": 356.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3010"
     }
   },
   "tema_11": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1719,11 +1859,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7011"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1788,11 +1932,16 @@
           0.0215
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8011"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1866,13 +2015,18 @@
         }
       },
       "expected": 452.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3011"
     }
   },
   "tema_12": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -1889,11 +2043,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7012"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -1958,11 +2116,16 @@
           0.01975
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8012"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2036,13 +2199,18 @@
         }
       },
       "expected": 289.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3012"
     }
   },
   "tema_13": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2059,11 +2227,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7013"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2128,11 +2300,16 @@
           0.01275
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8013"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2206,13 +2383,18 @@
         }
       },
       "expected": 323.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3013"
     }
   },
   "tema_14": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2229,11 +2411,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7014"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2298,11 +2484,16 @@
           0.02125
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8014"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2376,13 +2567,18 @@
         }
       },
       "expected": 283.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3014"
     }
   },
   "tema_15": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2399,11 +2595,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7015"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2468,11 +2668,16 @@
           0.01975
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8015"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2546,13 +2751,18 @@
         }
       },
       "expected": 346.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3015"
     }
   },
   "tema_16": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2569,11 +2779,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7016"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2638,11 +2852,16 @@
           0.016
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8016"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2716,13 +2935,18 @@
         }
       },
       "expected": 290.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3016"
     }
   },
   "tema_17": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2739,11 +2963,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7017"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2808,11 +3036,16 @@
           0.0175
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8017"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2886,13 +3119,18 @@
         }
       },
       "expected": 274.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3017"
     }
   },
   "tema_18": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -2909,11 +3147,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7018"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -2978,11 +3220,16 @@
           0.0245
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8018"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3056,13 +3303,18 @@
         }
       },
       "expected": 284.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3018"
     }
   },
   "tema_19": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3079,11 +3331,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7019"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3148,11 +3404,16 @@
           0.00525
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8019"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3226,13 +3487,18 @@
         }
       },
       "expected": 408.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3019"
     }
   },
   "tema_20": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3249,11 +3515,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7020"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3318,11 +3588,16 @@
           0.013
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8020"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3396,13 +3671,18 @@
         }
       },
       "expected": 246.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3020"
     }
   },
   "tema_21": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3419,11 +3699,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7021"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3488,11 +3772,16 @@
           0.015
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8021"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3566,13 +3855,18 @@
         }
       },
       "expected": 307.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3021"
     }
   },
   "tema_22": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3589,11 +3883,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7022"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3658,11 +3956,16 @@
           0.01425
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8022"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3736,13 +4039,18 @@
         }
       },
       "expected": 333.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3022"
     }
   },
   "tema_23": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3759,11 +4067,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7023"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3828,11 +4140,16 @@
           0.013
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8023"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3906,13 +4223,18 @@
         }
       },
       "expected": 273.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3023"
     }
   },
   "tema_24": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -3929,11 +4251,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7024"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -3998,11 +4324,16 @@
           0.0025
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8024"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4076,13 +4407,18 @@
         }
       },
       "expected": 232.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3024"
     }
   },
   "tema_25": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4099,11 +4435,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7025"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4168,11 +4508,16 @@
           0.015
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8025"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4246,13 +4591,18 @@
         }
       },
       "expected": 366.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3025"
     }
   },
   "tema_26": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4269,11 +4619,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7026"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4338,11 +4692,16 @@
           0.0085
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8026"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4416,13 +4775,18 @@
         }
       },
       "expected": 329.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3026"
     }
   },
   "tema_27": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4439,11 +4803,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7027"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4508,11 +4876,16 @@
           0.017
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8027"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4586,13 +4959,18 @@
         }
       },
       "expected": 178.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3027"
     }
   },
   "tema_28": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4609,11 +4987,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7028"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4678,11 +5060,16 @@
           0.02225
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8028"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4756,13 +5143,18 @@
         }
       },
       "expected": 341.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3028"
     }
   },
   "tema_29": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4779,11 +5171,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7029"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4848,11 +5244,16 @@
           0.0085
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8029"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -4926,13 +5327,18 @@
         }
       },
       "expected": 249.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3029"
     }
   },
   "tema_30": {
     "limpiar_nulos": {
       "inputs": {
-        "arg1": {
+        "df": {
           "A": [
             1.0,
             NaN,
@@ -4949,11 +5355,15 @@
           4.0
         ]
       },
+      "meta": {
+        "index_col": null,
+        "type": "dataframe"
+      },
       "codigo_oculto": "7030"
     },
     "nueva_moneda": {
       "inputs": {
-        "arg1": {
+        "datos": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -5018,11 +5428,16 @@
           0.0035
         ]
       },
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "dataframe"
+      },
       "codigo_oculto": "8030"
     },
     "reporte_pares": {
       "inputs": {
-        "arg1": {
+        "tabla": {
           "Fecha": [
             "2022-01-01 00:00:00",
             "2022-02-01 00:00:00",
@@ -5096,6 +5511,11 @@
         }
       },
       "expected": 209.0,
+      "meta": {
+        "index_col": "Fecha",
+        "is_datetime": true,
+        "type": "scalar"
+      },
       "codigo_oculto": "3030"
     }
   }
