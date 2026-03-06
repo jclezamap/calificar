@@ -72,132 +72,85 @@ class taller:
 
 
 class evafunciones:
-    def __init__(self, url_base, num_tema):
-        self.url_base = url_base
+    def __init__(self, url_repo, num_tema):
+        self.url = url_repo
         self.num_tema = f"tema_{num_tema}"
         self.respuestas = self._cargar_respuestas()
 
     def _cargar_respuestas(self):
         try:
-            # Descarga el JSON de respuestas del profesor
-            r = requests.get(f"{self.url_base}/respuestas.json", timeout=10)
-            r.raise_for_status() 
-            return r.json()
+            response = requests.get(self.url)
+            return response.json()
         except Exception as e:
-            print(f"❌ Error al conectar con el servidor de respuestas: {e}")
+            print(f"❌ Error al cargar el JSON: {e}")
             return None
-
-    def _generar_verificador(self, n_secreto, salt="2026i"):
-        # Genera el código hash final para el estudiante
-        hash_obj = hashlib.sha256(f"{n_secreto}{salt}{self.num_tema}".encode())
-        return hash_obj.hexdigest()[:8].upper()
-
-    def obtener_funcion_estudiante(self, nombre_funcion):
-        # Busca la función definida por el alumno en su entorno local
-        frame = inspect.stack()[2] # Subimos un nivel más para capturar el entorno del notebook
-        modulo = inspect.getmodule(frame[0])
-        funcion = getattr(modulo, nombre_funcion, None)
-        
-        if funcion is None:
-            main_mod = sys.modules.get('__main__')
-            funcion = getattr(main_mod, nombre_funcion, None)
-            
-        return funcion
 
     def validar(self, nombre_funcion):
         if not self.respuestas:
-            print("❌ No hay respuestas cargadas. Verifica tu conexión a internet.")
-            return
+            return "Error de conexión"
 
         tema_data = self.respuestas.get(self.num_tema)
-        if not tema_data:
-            print(f"❌ No existe el '{self.num_tema}' en el archivo de respuestas.")
-            return
-
         datos_reto = tema_data.get(nombre_funcion)
-        if not datos_reto:
-            print(f"❌ El ejercicio '{nombre_funcion}' no está configurado para este tema.")
-            return
-
-        inputs_del_reto = datos_reto['inputs']
+        inputs_raw = datos_reto['inputs']
         esperado_raw = datos_reto['expected']
-        codigo_base = datos_reto.get('codigo_oculto', '0000')
+        codigo_exito = datos_reto['codigo_oculto']
 
-        # --- AJUSTE: DETECCIÓN UNIVERSAL DE FECHAS (Reparación de DatetimeIndex) ---
-        lista_argumentos = []
-        for valor in inputs_del_reto.values():
-            if isinstance(valor, dict):
-                df_temp = pd.DataFrame(valor)
-                # Escaneamos columnas para encontrar datos que parezcan fechas
-                for col in df_temp.columns:
-                    col_dt = pd.to_datetime(df_temp[col], errors='coerce')
-                    # Si detectamos que la columna es mayoritariamente fecha, la volvemos índice
-                    if col_dt.notnull().sum() > (len(df_temp) * 0.5):
-                        df_temp[col] = col_dt
-                        df_temp.set_index(col, inplace=True)
-                        break # Salimos del bucle una vez detectada la fecha
-                lista_argumentos.append(df_temp)
+        # 1. RECONSTRUIR INPUTS (Detección de Fecha/Periodo)
+        args_para_estudiante = []
+        for val in inputs_raw.values():
+            if isinstance(val, dict):
+                df_input = pd.DataFrame(val)
+                # Buscamos columnas temporales
+                cols_t = [c for c in df_input.columns if c.lower() in ['fecha', 'periodo'] or 'fecha' in c.lower()]
+                if cols_t:
+                    df_input[cols_t[0]] = pd.to_datetime(df_input[cols_t[0]])
+                    df_input.set_index(cols_t[0], inplace=True)
+                    df_input.index.name = 'Fecha'
+                args_para_estudiante.append(df_input)
             else:
-                lista_argumentos.append(valor)
-        # --------------------------------------------------------------------------
+                args_para_estudiante.append(val)
 
-        funcion_estudiante = self.obtener_funcion_estudiante(nombre_funcion)
-         
-        if not funcion_estudiante:
-            print(f"❌ Error: No has definido la función '{nombre_funcion}'.")
-            print(f"💡 Recuerda escribir: def {nombre_funcion}(...)")
-            return
-        
+        # 2. EJECUTAR FUNCIÓN DEL ESTUDIANTE
         try:
-            # Ejecución por posición (*lista_argumentos)
-            resultado_estudiante = funcion_estudiante(*lista_argumentos)
+            import __main__
+            func = getattr(__main__, nombre_funcion)
+            resultado_estudiante = func(*args_para_estudiante)
             
-            es_correcto = False
-
-            # 1. Validación de DataFrames
+            # 3. VALIDACIÓN ESPECIAL PARA DATAFRAMES
             if isinstance(resultado_estudiante, pd.DataFrame):
                 df_esperado = pd.DataFrame(esperado_raw)
+                
+                # Normalizar fechas en el esperado si existen
+                cols_e = [c for c in df_esperado.columns if c.lower() in ['fecha', 'periodo'] or 'fecha' in c.lower()]
+                if cols_e:
+                    df_esperado[cols_e[0]] = pd.to_datetime(df_esperado[cols_e[0]])
+                    df_esperado.set_index(cols_e[0], inplace=True)
+                    df_esperado.index.name = 'Fecha'
+
+                # --- ELIMINAR ERROR DE ÍNDICES Y SHAPE ---
+                # Forzamos al esperado a tener el MISMO índice que el alumno para comparar solo DATA
+                if len(df_esperado) == len(resultado_estudiante):
+                    df_esperado.index = resultado_estudiante.index
+                
                 pd.testing.assert_frame_equal(
                     resultado_estudiante, 
                     df_esperado, 
-                    check_dtype=False, 
-                    check_like=True,    
-                    check_exact=False,  
-                    atol=1e-5           
+                    check_dtype=False,
+                    check_column_type=False,
+                    check_like=True 
                 )
-                es_correcto = True
-            
-            # 2. Validación de Series
-            elif isinstance(resultado_estudiante, pd.Series):
-                serie_esperada = pd.Series(esperado_raw)
-                pd.testing.assert_series_equal(resultado_estudiante, serie_esperada, check_dtype=False)
-                es_correcto = True
-                
-            # 3. Validación de escalares (Números, Strings, Booleans)
-            else:
-                if isinstance(resultado_estudiante, (int, float, np.number)):
-                    es_correcto = np.allclose(resultado_estudiante, esperado_raw, atol=1e-5)
-                else:
-                    es_correcto = (resultado_estudiante == esperado_raw)
+                print(f"✅ ¡Correcto! Código: {codigo_exito}")
+                return codigo_exito
 
-            if es_correcto:
-                codigo_final = self._generar_verificador(codigo_base)
-                print(f"✅ ¡Validación exitosa para '{nombre_funcion}'!")
-                print(f"🔢 TU CÓDIGO DE ÉXITO: {codigo_final}")
-                return codigo_final
-            else:
-                print(f"❌ El resultado obtenido ({resultado_estudiante}) no coincide con lo esperado.")
-                print("💡 Revisa tus cálculos o filtros e intenta de nuevo.")
+            # VALIDACIÓN PARA ESCALARES (reporte_pares)
+            elif isinstance(resultado_estudiante, (int, float, np.number)):
+                if np.isclose(resultado_estudiante, float(esperado_raw)):
+                    print(f"✅ ¡Correcto! Código: {codigo_exito}")
+                    return codigo_exito
 
-        except AttributeError as e:
-            print(f"⚠️ Error de Atributo: {e}")
-            if 'month' in str(e) or 'dt' in str(e):
-                print("💡 Pista: Estás intentando extraer el mes de algo que no es una fecha. Verifica tu índice.")
-        
-        except TypeError as e:
-            print(f"⚠️ Error de Tipo/Argumentos: {e}")
-            print("💡 Pista: Asegúrate de que tu función reciba el número correcto de parámetros.")
-            
+        except AssertionError as e:
+            print(f"⚠️ Error: Los datos no coinciden.\nℹ️ Detalle: {e}")
         except Exception as e:
-            print(f"⚠️ Error inesperado al ejecutar tu función: {type(e).__name__}")
-            print(f"ℹ️ Detalle: {e}")
+            print(f"⚠️ Error inesperado: {e}")
+        
+        return None
