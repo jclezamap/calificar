@@ -13,6 +13,9 @@ from scipy import stats
 # Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
 taller = cr.taller('ID', G, 'taller3BD2026i', 6)
 #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_3
+
+#si quieren saber donde salieron los datos de Actividad2 pueden ejecutar el siguiente código
+#df_mercado = yf.download(['AAPL', 'MSFT'], start='2024-01-01', end='2024-12-31')['Close']
 ```
 
 ---
