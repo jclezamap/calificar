@@ -19,23 +19,26 @@ taller = cr.taller('ID', G, 'taller3BD2026i', 6)
 
 #### 📋 Enunciados del Taller
 
-1. **Exploración de Series Temporales:** Cargue el archivo `Actividad2.xlsx` y, utilizando el método `.loc`, extraiga el precio de cierre de la acción **AAPL** para la fecha exacta de **'2024-02-16'**.   
-   **[0] ¿Cuál es el valor del precio de cierre encontrado?**
+1. **Extracción de Datos Específicos:** Cargue el archivo Excel llamado `Actividad2.xlsx`. Utilice el método `.loc` sobre el índice de fechas para extraer el precio de cierre de la acción **AAPL** correspondiente al día **'2024-02-16'**.   
+   **[0] ¿Cuál es el valor exacto del precio de cierre para esa fecha?**
 
-2. **Tratamiento de Datos Faltantes:** Aplique el método `.ffill()` (forward fill) a todo el DataFrame para asegurar la continuidad de los datos.   
-   **[1] Tras la imputación, ¿cuál es el promedio (mean) de la columna MSFT?**
+2. **Limpieza de Datos Faltantes:** Las series financieras suelen tener valores nulos (NaN) en días no hábiles. Cargue el DataFrame completo de `Actividad2.xlsx` y aplique el método `.ffill()` (forward fill) para completar los espacios vacíos con el último valor disponible.   
+   **[1] Tras realizar la imputación, ¿cuál es el promedio (mean) de la columna 'MSFT'?**
 
-3. **Gestión de Outliers:** Identifique los valores de **AAPL** superiores a 500 y reemplácelos por la mediana (`.median()`) de esa misma columna utilizando asignación con `.loc`.   
-   **[2] ¿Cuál es la desviación estándar (std) de AAPL después de la corrección?**
+3. **Tratamiento de Valores Atípicos (Outliers):** En la columna **AAPL**, identifique todos los registros cuyo valor sea superior a 500. Reemplace estos valores atípicos por la mediana (`.median()`) de esa misma columna utilizando la función `.loc`.   
+   **[2] ¿Cuál es la desviación estándar (std) de la columna AAPL después de corregir los valores?**
 
-4. **Análisis de Asociación:** Determine la fuerza de la relación lineal entre Apple (AAPL) y Microsoft (MSFT) mediante el coeficiente de correlación de Pearson usando el método `.corr()`.   
-   **[3] ¿Cuál es el valor del coeficiente de correlación obtenido?**
+4. **Análisis de Correlación:** Utilice el método `.corr()` de Pandas para calcular el coeficiente de correlación de Pearson entre las series de precios de 'AAPL' y 'MSFT'. Este valor indica el grado de asociación lineal entre ambas acciones.   
+   **[3] ¿Cuál es el resultado del coeficiente de correlación obtenido?**
 
-5. **Inferencia Estadística:** Utilice la función `stats.ttest_ind()` de la librería `scipy.stats` para realizar una prueba de hipótesis independiente entre las series de AAPL y MSFT.   
-   **[4] ¿Cuál es el p-valor (p_val) resultante de la prueba?**
+5. **Inferencia Estadística (Prueba T):** Importe la librería `from scipy import stats`. Realice una prueba de hipótesis para muestras independientes usando `stats.ttest_ind()` comparando las series de 'AAPL' y 'MSFT' (asegúrese de no tener valores nulos).   
+   **[4] ¿Cuál es el valor del p-valor (p_val) arrojado por la prueba estadística?**
 
-6. **RETO DE PROGRAMACIÓN (Limpieza):** Defina una función llamada `limpiar_precios(df_sucio)`. Debe eliminar filas con 'ERROR', quitar '$' y puntos de miles en 'Precio_BVC' y devolver la suma total como float.   
-   **Valide con evafunciones para obtener su código de éxito.** [5] ¿Cuál es el código de éxito?**
+6. **RETO DE PROGRAMACIÓN (Limpieza de Datos Crudos):** Localice el archivo `Reporte_Crudo.csv` en su carpeta de trabajo. Defina una función llamada `limpiar_precios(df_sucio)` que procese la columna 'Precio_BVC' de la siguiente manera:   
+   a) Filtre el DataFrame para eliminar las filas que contienen la palabra 'ERROR'.   
+   b) En los valores restantes, elimine el símbolo de moneda '$' y los puntos de miles (ej: de '$150.500' a '150500').   
+   c) Transforme la columna a tipo numérico (float) y retorne la suma total de dicha columna con `return`.   
+   **Valide su función con la librería evafunciones para obtener su código de éxito.** [5] ¿Cuál es el código de éxito?**
 
 
 ---
