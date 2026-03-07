@@ -79,28 +79,38 @@ class evafunciones:
         self.respuestas = self._cargar_respuestas()
 
     def _cargar_respuestas(self):
+        def _cargar_respuestas(self):
         try:
-            # 1. Limpieza profunda de la URL para GitHub Raw
-            # Eliminamos 'blob/', 'tree/' y el problemático 'refs/heads/'
+            # 1. Limpieza de URL para asegurar contenido Raw
             raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
                               .replace("/blob/", "/") \
                               .replace("/tree/", "/") \
-                              .replace("/refs/heads/", "/")
+                              .replace("/refs/heads/", "/") # <-- Limpieza de Colab
             
-            # 2. Petición al servidor
+            # IMPRESIÓN DE DEPURACIÓN: Esto nos dirá qué está pasando
+            # print(f"🔍 Intentando cargar desde: {raw_url}") 
+            
             response = requests.get(raw_url)
             
-            # Si GitHub devuelve 404 o error, lo informamos
+            # 2. Verificación de tipo de contenido
+            content_type = response.headers.get('Content-Type', '')
+            
+            if "text/html" in content_type:
+                print(f"❌ Error: La URL devolvió un HTML en lugar de un JSON.")
+                print(f"   Asegúrese de que el archivo 'respuestas.json' exista en esa carpeta.")
+                return None
+            
             if response.status_code != 200:
-                print(f"❌ Error {response.status_code}: No se encontró el archivo en {raw_url}")
+                print(f"❌ Error {response.status_code}: No se encontró el archivo.")
                 return None
                 
             return response.json()
             
         except Exception as e:
-            # Este es el error que ves: "Expecting value..." 
-            # Suele pasar si raw_url todavía apunta a un HTML
-            print(f"❌ Error al cargar el JSON: {e}")
+            print(f"❌ Error crítico al cargar el JSON: {e}")
+            # Si el error es 'Expecting value', imprimimos los primeros 50 caracteres del error
+            if "Expecting value" in str(e):
+                print(f"   Contenido recibido (primeros 50 caracteres): {response.text[:50]}")
             return None
 
     def validar(self, nombre_funcion):
