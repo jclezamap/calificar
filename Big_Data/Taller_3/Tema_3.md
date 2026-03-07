@@ -1,5 +1,5 @@
 # Big Data
-## Taller 3: Introducción a la Librería Pandas y Análisis EDA
+## Taller 3: Análisis EDA
 
 ### 🛠️ Instrucciones Previas
 ```python

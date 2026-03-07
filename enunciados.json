@@ -948,7 +948,7 @@
                 ]
             },
             "fecha": "07/03/2026",
-            "subtitulo": "Introducción a la Librería Pandas y Análisis EDA",
+            "subtitulo": "Análisis EDA",
             "instruccion": "\n# Configuración inicial del Taller\nimport calificar as cr\nimport numpy as np\nimport pandas as pd\nimport yfinance as yf\nfrom scipy import stats\n\n# Reemplace 'ID' por su código y 'G' por su número de grupo\ntaller = cr.taller('ID', G, 'taller3BD2026i', 6)\n    "
         }
     }
