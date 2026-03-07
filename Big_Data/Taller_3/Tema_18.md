@@ -10,8 +10,9 @@ import pandas as pd
 import yfinance as yf
 from scipy import stats
 
-# Reemplace 'ID' por su código y 'G' por su número de grupo
+# Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
 taller = cr.taller('ID', G, 'taller3BD2026i', 6)
+#GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_3
 ```
 
 ---

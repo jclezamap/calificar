@@ -949,7 +949,7 @@
             },
             "fecha": "07/03/2026",
             "subtitulo": "Análisis EDA",
-            "instruccion": "\n# Configuración inicial del Taller\nimport calificar as cr\nimport numpy as np\nimport pandas as pd\nimport yfinance as yf\nfrom scipy import stats\n\n# Reemplace 'ID' por su código y 'G' por su número de grupo\ntaller = cr.taller('ID', G, 'taller3BD2026i', 6)\n    "
+            "instruccion": "\n# Configuración inicial del Taller\nimport calificar as cr\nimport numpy as np\nimport pandas as pd\nimport yfinance as yf\nfrom scipy import stats\n\n# Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.\ntaller = cr.taller('ID', G, 'taller3BD2026i', 6)\n#GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_3\n\n    "
         }
     }
 }
