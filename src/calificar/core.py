@@ -80,21 +80,26 @@ class evafunciones:
 
     def _cargar_respuestas(self):
         try:
-            # 1. Aseguramos lectura de contenido crudo (Raw)
-            # Agregamos .replace("/refs/heads/", "/") para limpiar la ruta que genera el error
+            # 1. Limpieza profunda de la URL para GitHub Raw
+            # Eliminamos 'blob/', 'tree/' y el problemático 'refs/heads/'
             raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
                               .replace("/blob/", "/") \
-                              .replace("/refs/heads/", "/") 
+                              .replace("/tree/", "/") \
+                              .replace("/refs/heads/", "/")
             
+            # 2. Petición al servidor
             response = requests.get(raw_url)
             
-            # 2. Verificación de seguridad por si la URL sigue devolviendo algo que no es JSON
+            # Si GitHub devuelve 404 o error, lo informamos
             if response.status_code != 200:
-                print(f"❌ Error {response.status_code}: No se pudo encontrar el archivo en la ruta.")
+                print(f"❌ Error {response.status_code}: No se encontró el archivo en {raw_url}")
                 return None
                 
             return response.json()
+            
         except Exception as e:
+            # Este es el error que ves: "Expecting value..." 
+            # Suele pasar si raw_url todavía apunta a un HTML
             print(f"❌ Error al cargar el JSON: {e}")
             return None
 
