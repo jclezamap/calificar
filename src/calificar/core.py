@@ -79,7 +79,6 @@ class evafunciones:
         self.respuestas = self._cargar_respuestas()
 
     def _cargar_respuestas(self):
-        def _cargar_respuestas(self):
         try:
             # 1. Limpieza de URL para asegurar contenido Raw
             raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
