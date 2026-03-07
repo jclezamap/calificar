@@ -80,9 +80,19 @@ class evafunciones:
 
     def _cargar_respuestas(self):
         try:
-            # Aseguramos lectura de contenido crudo (Raw)
-            raw_url = self.url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+            # 1. Aseguramos lectura de contenido crudo (Raw)
+            # Agregamos .replace("/refs/heads/", "/") para limpiar la ruta que genera el error
+            raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
+                              .replace("/blob/", "/") \
+                              .replace("/refs/heads/", "/") 
+            
             response = requests.get(raw_url)
+            
+            # 2. Verificación de seguridad por si la URL sigue devolviendo algo que no es JSON
+            if response.status_code != 200:
+                print(f"❌ Error {response.status_code}: No se pudo encontrar el archivo en la ruta.")
+                return None
+                
             return response.json()
         except Exception as e:
             print(f"❌ Error al cargar el JSON: {e}")
