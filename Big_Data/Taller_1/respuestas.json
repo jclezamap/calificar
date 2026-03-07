@@ -4,26 +4,30 @@
       "inputs": {
         "A": [
           [
-            1,
-            4
+            2,
+            2
           ],
           [
-            1,
-            4
+            2,
+            3
           ]
         ],
         "B": [
           [
-            1,
+            2,
             3
           ],
           [
-            1,
-            2
+            4,
+            4
           ]
         ]
       },
-      "expected": 22,
+      "expected": 30,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1001"
     }
   },
@@ -33,10 +37,10 @@
         "A": [
           [
             3,
-            1
+            2
           ],
           [
-            1,
+            4,
             1
           ]
         ],
@@ -46,12 +50,16 @@
             4
           ],
           [
-            3,
-            3
+            1,
+            2
           ]
         ]
       },
-      "expected": 16,
+      "expected": 20,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1002"
     }
   },
@@ -64,22 +72,26 @@
             3
           ],
           [
-            1,
-            4
+            2,
+            2
           ]
         ],
         "B": [
           [
-            2,
-            1
+            3,
+            3
           ],
           [
-            2,
+            1,
             1
           ]
         ]
       },
-      "expected": 17,
+      "expected": 25,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1003"
     }
   },
@@ -88,18 +100,18 @@
       "inputs": {
         "A": [
           [
-            3,
-            2
+            4,
+            4
           ],
           [
-            4,
-            3
+            1,
+            4
           ]
         ],
         "B": [
           [
-            3,
-            3
+            2,
+            4
           ],
           [
             2,
@@ -107,7 +119,11 @@
           ]
         ]
       },
-      "expected": 29,
+      "expected": 34,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1004"
     }
   },
@@ -117,25 +133,29 @@
         "A": [
           [
             4,
-            2
+            1
           ],
           [
-            3,
-            2
+            2,
+            1
           ]
         ],
         "B": [
           [
-            2,
+            4,
             4
           ],
           [
             3,
-            2
+            3
           ]
         ]
       },
       "expected": 29,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1005"
     }
   },
@@ -144,11 +164,11 @@
       "inputs": {
         "A": [
           [
-            2,
-            4
+            3,
+            1
           ],
           [
-            3,
+            2,
             4
           ]
         ],
@@ -158,12 +178,16 @@
             1
           ],
           [
-            3,
+            4,
             1
           ]
         ]
       },
       "expected": 25,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1006"
     }
   },
@@ -172,26 +196,30 @@
       "inputs": {
         "A": [
           [
-            1,
-            1
+            3,
+            4
           ],
           [
-            1,
-            4
+            2,
+            3
           ]
         ],
         "B": [
           [
-            1,
-            1
+            2,
+            4
           ],
           [
-            4,
+            1,
             1
           ]
         ]
       },
-      "expected": 10,
+      "expected": 27,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1007"
     }
   },
@@ -200,26 +228,30 @@
       "inputs": {
         "A": [
           [
-            3,
-            3
+            4,
+            1
           ],
           [
-            3,
-            4
+            4,
+            1
           ]
         ],
         "B": [
           [
-            2,
-            3
+            4,
+            2
           ],
           [
-            2,
+            1,
             4
           ]
         ]
       },
-      "expected": 37,
+      "expected": 26,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1008"
     }
   },
@@ -228,8 +260,8 @@
       "inputs": {
         "A": [
           [
-            2,
-            2
+            1,
+            4
           ],
           [
             1,
@@ -238,16 +270,20 @@
         ],
         "B": [
           [
-            3,
-            4
+            4,
+            3
           ],
           [
-            1,
-            2
+            4,
+            4
           ]
         ]
       },
-      "expected": 23,
+      "expected": 36,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1009"
     }
   },
@@ -256,26 +292,30 @@
       "inputs": {
         "A": [
           [
-            4,
-            3
-          ],
-          [
-            4,
-            1
-          ]
-        ],
-        "B": [
-          [
             3,
             4
           ],
           [
+            1,
+            3
+          ]
+        ],
+        "B": [
+          [
+            1,
+            3
+          ],
+          [
             4,
-            1
+            2
           ]
         ]
       },
-      "expected": 41,
+      "expected": 25,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1010"
     }
   },
@@ -288,14 +328,14 @@
             3
           ],
           [
-            2,
-            2
+            4,
+            4
           ]
         ],
         "B": [
           [
             4,
-            4
+            2
           ],
           [
             1,
@@ -304,6 +344,10 @@
         ]
       },
       "expected": 26,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1011"
     }
   },
@@ -312,26 +356,30 @@
       "inputs": {
         "A": [
           [
+            2,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "B": [
+          [
             3,
-            4
+            1
           ],
           [
             4,
             1
           ]
-        ],
-        "B": [
-          [
-            2,
-            2
-          ],
-          [
-            1,
-            1
-          ]
         ]
       },
-      "expected": 19,
+      "expected": 18,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1012"
     }
   },
@@ -341,25 +389,29 @@
         "A": [
           [
             2,
-            1
+            3
           ],
           [
-            1,
+            3,
             2
           ]
         ],
         "B": [
           [
-            4,
-            4
+            1,
+            2
           ],
           [
-            2,
-            2
+            3,
+            4
           ]
         ]
       },
-      "expected": 18,
+      "expected": 25,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1013"
     }
   },
@@ -369,25 +421,29 @@
         "A": [
           [
             1,
-            1
+            4
           ],
           [
-            2,
+            3,
             1
           ]
         ],
         "B": [
           [
-            1,
+            4,
             2
           ],
           [
-            2,
-            2
+            3,
+            3
           ]
         ]
       },
-      "expected": 9,
+      "expected": 24,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1014"
     }
   },
@@ -396,26 +452,30 @@
       "inputs": {
         "A": [
           [
-            4,
-            4
+            2,
+            3
           ],
           [
-            1,
-            4
+            4,
+            2
           ]
         ],
         "B": [
           [
             4,
-            2
+            3
           ],
           [
-            1,
-            3
+            4,
+            1
           ]
         ]
       },
-      "expected": 37,
+      "expected": 35,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1015"
     }
   },
@@ -424,26 +484,30 @@
       "inputs": {
         "A": [
           [
-            1,
-            1
-          ],
-          [
-            1,
-            3
-          ]
-        ],
-        "B": [
-          [
             4,
             3
           ],
           [
+            4,
+            2
+          ]
+        ],
+        "B": [
+          [
             3,
-            4
+            1
+          ],
+          [
+            2,
+            2
           ]
         ]
       },
-      "expected": 22,
+      "expected": 27,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1016"
     }
   },
@@ -452,26 +516,30 @@
       "inputs": {
         "A": [
           [
-            3,
-            3
+            2,
+            4
           ],
           [
-            3,
-            3
+            1,
+            1
           ]
         ],
         "B": [
           [
-            1,
+            3,
             2
           ],
           [
-            3,
-            4
+            4,
+            1
           ]
         ]
       },
-      "expected": 30,
+      "expected": 19,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1017"
     }
   },
@@ -480,26 +548,30 @@
       "inputs": {
         "A": [
           [
-            2,
-            4
+            3,
+            1
           ],
           [
             2,
-            1
+            3
           ]
         ],
         "B": [
           [
             4,
-            4
+            1
           ],
           [
-            1,
-            1
+            3,
+            4
           ]
         ]
       },
-      "expected": 27,
+      "expected": 31,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1018"
     }
   },
@@ -509,25 +581,29 @@
         "A": [
           [
             1,
-            2
-          ],
-          [
-            4,
-            1
-          ]
-        ],
-        "B": [
-          [
-            4,
-            1
+            4
           ],
           [
             1,
             4
           ]
+        ],
+        "B": [
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            1
+          ]
         ]
       },
-      "expected": 14,
+      "expected": 19,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1019"
     }
   },
@@ -536,26 +612,30 @@
       "inputs": {
         "A": [
           [
-            1,
-            4
-          ],
-          [
-            4,
-            3
-          ]
-        ],
-        "B": [
-          [
-            1,
+            2,
             4
           ],
           [
             1,
             2
           ]
+        ],
+        "B": [
+          [
+            4,
+            4
+          ],
+          [
+            3,
+            1
+          ]
         ]
       },
-      "expected": 27,
+      "expected": 29,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1020"
     }
   },
@@ -564,26 +644,30 @@
       "inputs": {
         "A": [
           [
-            2,
-            1
+            3,
+            3
           ],
           [
             1,
-            3
+            4
           ]
         ],
         "B": [
           [
-            3,
-            4
+            1,
+            2
           ],
           [
-            4,
+            1,
             2
           ]
         ]
       },
-      "expected": 20,
+      "expected": 18,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1021"
     }
   },
@@ -592,26 +676,30 @@
       "inputs": {
         "A": [
           [
-            2,
+            3,
             2
           ],
           [
-            4,
+            1,
             4
           ]
         ],
         "B": [
           [
             2,
-            4
+            3
           ],
           [
             1,
-            3
+            1
           ]
         ]
       },
-      "expected": 28,
+      "expected": 17,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1022"
     }
   },
@@ -620,26 +708,30 @@
       "inputs": {
         "A": [
           [
-            2,
-            1
+            4,
+            3
           ],
           [
-            2,
+            1,
             3
           ]
         ],
         "B": [
           [
             3,
-            2
+            1
           ],
           [
-            1,
-            2
+            2,
+            1
           ]
         ]
       },
-      "expected": 16,
+      "expected": 20,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1023"
     }
   },
@@ -648,12 +740,12 @@
       "inputs": {
         "A": [
           [
-            4,
-            2
+            3,
+            1
           ],
           [
-            4,
-            3
+            1,
+            1
           ]
         ],
         "B": [
@@ -662,12 +754,16 @@
             3
           ],
           [
-            2,
+            4,
             4
           ]
         ]
       },
-      "expected": 38,
+      "expected": 20,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1024"
     }
   },
@@ -676,26 +772,30 @@
       "inputs": {
         "A": [
           [
-            2,
-            4
+            1,
+            2
           ],
           [
             3,
-            1
+            2
           ]
         ],
         "B": [
           [
-            2,
-            3
+            4,
+            2
           ],
           [
-            1,
-            4
+            3,
+            2
           ]
         ]
       },
-      "expected": 23,
+      "expected": 21,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1025"
     }
   },
@@ -705,25 +805,29 @@
         "A": [
           [
             2,
-            4
+            1
           ],
           [
-            1,
-            4
+            3,
+            3
           ]
         ],
         "B": [
           [
-            2,
+            1,
             4
           ],
           [
             3,
-            1
+            3
           ]
         ]
       },
-      "expected": 27,
+      "expected": 24,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1026"
     }
   },
@@ -732,26 +836,30 @@
       "inputs": {
         "A": [
           [
-            2,
-            4
-          ],
-          [
-            1,
+            4,
             2
-          ]
-        ],
-        "B": [
-          [
-            1,
-            1
           ],
           [
             4,
             2
           ]
+        ],
+        "B": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            1
+          ]
         ]
       },
-      "expected": 14,
+      "expected": 24,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1027"
     }
   },
@@ -760,26 +868,30 @@
       "inputs": {
         "A": [
           [
-            3,
-            1
+            2,
+            4
           ],
           [
-            4,
+            1,
             2
           ]
         ],
         "B": [
           [
             3,
-            4
+            3
           ],
           [
-            3,
-            3
+            4,
+            1
           ]
         ]
       },
-      "expected": 31,
+      "expected": 24,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1028"
     }
   },
@@ -788,26 +900,30 @@
       "inputs": {
         "A": [
           [
+            3,
+            4
+          ],
+          [
             4,
             2
+          ]
+        ],
+        "B": [
+          [
+            4,
+            1
           ],
           [
             4,
             3
           ]
-        ],
-        "B": [
-          [
-            3,
-            4
-          ],
-          [
-            3,
-            4
-          ]
         ]
       },
-      "expected": 44,
+      "expected": 38,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1029"
     }
   },
@@ -816,8 +932,8 @@
       "inputs": {
         "A": [
           [
-            1,
-            3
+            4,
+            4
           ],
           [
             1,
@@ -826,16 +942,20 @@
         ],
         "B": [
           [
-            4,
-            4
+            3,
+            1
           ],
           [
-            2,
-            3
+            4,
+            2
           ]
         ]
       },
-      "expected": 27,
+      "expected": 26,
+      "meta": {
+        "type": "scalar",
+        "index_col": null
+      },
       "codigo_oculto": "1030"
     }
   }
