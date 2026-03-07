@@ -17,6 +17,7 @@ __pycache__/
 /*.xlsx
 /*.sqlite
 /*.json
+/*.txt
 
 # --- CARPETAS DE DISTRIBUCIÓN ---
 # Estas suelen estar solo en la raíz y no queremos ninguna en ningún lado
