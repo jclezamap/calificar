@@ -80,36 +80,37 @@ class evafunciones:
 
     def _cargar_respuestas(self):
         try:
-            # 1. Limpieza de URL para asegurar contenido Raw
+            # 1. LIMPIEZA TOTAL DE URL (Inmune a Colab)
+            # Pasamos de 'github.com' a 'raw.githubusercontent.com'
+            # Y eliminamos los segmentos que causan el error de HTML
             raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
                               .replace("/blob/", "/") \
                               .replace("/tree/", "/") \
-                              .replace("/refs/heads/", "/") # <-- Limpieza de Colab
+                              .replace("/refs/heads/", "/") \
+                              .replace("/refs/branch/", "/")
             
-            # IMPRESIÓN DE DEPURACIÓN: Esto nos dirá qué está pasando
-            # print(f"🔍 Intentando cargar desde: {raw_url}") 
+            # 2. PETICIÓN CON CABECERAS DE TEXTO PLANO
+            # Forzamos a GitHub a entender que queremos el contenido crudo
+            headers = {'Accept': 'application/json'}
+            response = requests.get(raw_url, headers=headers)
             
-            response = requests.get(raw_url)
-            
-            # 2. Verificación de tipo de contenido
-            content_type = response.headers.get('Content-Type', '')
-            
-            if "text/html" in content_type:
-                print(f"❌ Error: La URL devolvió un HTML en lugar de un JSON.")
-                print(f"   Asegúrese de que el archivo 'respuestas.json' exista en esa carpeta.")
-                return None
-            
+            # 3. VERIFICACIÓN DE ESTADO
             if response.status_code != 200:
-                print(f"❌ Error {response.status_code}: No se encontró el archivo.")
+                print(f"❌ Error {response.status_code}: No se pudo acceder al JSON.")
+                print(f"🔗 Ruta fallida: {raw_url}")
                 return None
-                
+            
+            # 4. PRUEBA DE CONTENIDO (Antes de convertir)
+            contenido = response.text.strip()
+            if not contenido.startswith("{"):
+                print("❌ Error: El servidor no devolvió un JSON válido.")
+                print(f"📝 Inicio del contenido recibido: {contenido[:50]}")
+                return None
+
             return response.json()
             
         except Exception as e:
-            print(f"❌ Error crítico al cargar el JSON: {e}")
-            # Si el error es 'Expecting value', imprimimos los primeros 50 caracteres del error
-            if "Expecting value" in str(e):
-                print(f"   Contenido recibido (primeros 50 caracteres): {response.text[:50]}")
+            print(f"❌ Error al cargar el JSON: {e}")
             return None
 
     def validar(self, nombre_funcion):
