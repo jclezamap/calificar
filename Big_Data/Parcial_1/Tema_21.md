@@ -1,5 +1,5 @@
 # Big Data
-## Taller 4: Primer Parcial
+## Parcial 1: Primer Parcial
 
 ### 🛠️ Instrucciones Previas
 ```python
