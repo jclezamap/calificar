@@ -24,7 +24,7 @@ Para realizar este taller, asegúrate de tener instalada las librerías numpy y 
 ---
 ### 👤 Asignación: Tema 23
 
-#### 📋 Enunciados del Taller
+#### 📋 Enunciados del Taller Parcial
 
 **1.** Convierta la lista `[[3,4,3], [4,2,2], [4,4,2]]` en una matriz de 3x3. Réstele una matriz identidad y calcule la suma de todos los elementos. **[0]¿Cuál es el valor de la suma?**
 

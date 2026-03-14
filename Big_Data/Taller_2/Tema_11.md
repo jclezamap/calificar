@@ -25,7 +25,7 @@ Para realizar este taller, asegúrate de tener instalada las librerías numpy, p
 ---
 ### 👤 Asignación: Tema 11
 
-#### 📋 Enunciados del Taller
+#### 📋 Enunciados del Taller Parcial
 
 **1. Creación de la Tabla Principal:**   
    a) Antes de iniciar, coloque la siguiente función en python para generar números aleatorios con una semilla establecida  `np.random.seed(1150)`.   

@@ -21,7 +21,7 @@ taller = cr.taller('ID', G, 'taller3BD2026i', 6)
 ---
 ### 👤 Asignación: Tema 9
 
-#### 📋 Enunciados del Taller
+#### 📋 Enunciados del Taller Parcial
 
 1. **Extracción de Datos Específicos:** Cargue el archivo Excel llamado `Actividad2.xlsx`. Utilice el método `.loc` sobre el índice de fechas para extraer el precio de cierre de la acción **AAPL** correspondiente al día **'2024-01-23'**.   
    **[0] ¿Cuál es el valor exacto del precio de cierre para esa fecha?**

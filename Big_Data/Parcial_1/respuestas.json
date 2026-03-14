@@ -1,0 +1,542 @@
+{
+  "tema_1": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1531
+    }
+  },
+  "tema_2": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1532
+    }
+  },
+  "tema_3": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1533
+    }
+  },
+  "tema_4": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1534
+    }
+  },
+  "tema_5": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1535
+    }
+  },
+  "tema_6": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1536
+    }
+  },
+  "tema_7": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1537
+    }
+  },
+  "tema_8": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1538
+    }
+  },
+  "tema_9": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1539
+    }
+  },
+  "tema_10": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1540
+    }
+  },
+  "tema_11": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1541
+    }
+  },
+  "tema_12": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1542
+    }
+  },
+  "tema_13": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1543
+    }
+  },
+  "tema_14": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1544
+    }
+  },
+  "tema_15": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1545
+    }
+  },
+  "tema_16": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1546
+    }
+  },
+  "tema_17": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1547
+    }
+  },
+  "tema_18": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1548
+    }
+  },
+  "tema_19": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1549
+    }
+  },
+  "tema_20": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1550
+    }
+  },
+  "tema_21": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1551
+    }
+  },
+  "tema_22": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1552
+    }
+  },
+  "tema_23": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1553
+    }
+  },
+  "tema_24": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1554
+    }
+  },
+  "tema_25": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1555
+    }
+  },
+  "tema_26": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1556
+    }
+  },
+  "tema_27": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1557
+    }
+  },
+  "tema_28": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1558
+    }
+  },
+  "tema_29": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1559
+    }
+  },
+  "tema_30": {
+    "analisis_vulnerabilidad": {
+      "inputs": {
+        "lista_precios": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ]
+      },
+      "expected": 2,
+      "meta": {
+        "type": "scalar"
+      },
+      "codigo_oculto": 1560
+    }
+  }
+}
