@@ -18,7 +18,7 @@ Eva = cr.evafunciones(URL, G)
 
 
 
-#Nota: Los datos de su cliente están en el Excel, pero los puntos de comparación C1 y C2 son fijos para todo el curso: C1 = [0.2, 0.8] y C2 = [0.8, 0.2]. Úselos para entrenar su modelo de KNeighborsClassifier.
+#Nota: Los datos están en el Excel, pero los puntos de comparación C1 y C2 son fijos para todo el curso: C1 = [0.2, 0.8] y C2 = [0.8, 0.2].
 ```
 
 ---
