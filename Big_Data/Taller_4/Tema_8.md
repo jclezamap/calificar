@@ -1,5 +1,5 @@
 # Big Data
-## Taller 4: Taller No 4: NLP y k-NN
+## Taller 4: NLP y k-NN
 
 ### 🛠️ Instrucciones Previas
 ```python
