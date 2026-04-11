@@ -11,14 +11,14 @@ import yfinance as yf
 from scipy import stats
 
 # Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
-parcial1 = cr.taller('ID', G, 'parcial1BD2026i', 5)
+taller = cr.taller('ID', G, 'parcial1BD2026i', 5)
 #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Parcial_1
 ```
 
 ---
 ### 👤 Asignación: Tema 3
 
-#### 📋 Enunciados del Taller Parcial
+#### 📋 Enunciados del Taller 
 
 **1. Uso de Numpy:**   
    Cree una matriz de identidad de 4x4. Multiplíquela por el escalar 13.   

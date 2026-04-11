@@ -1,0 +1,362 @@
+{
+  "tema_1": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.12
+      },
+      "expected": false,
+      "codigo_oculto": "7001",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_2": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.14
+      },
+      "expected": false,
+      "codigo_oculto": "7002",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_3": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.16
+      },
+      "expected": false,
+      "codigo_oculto": "7003",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_4": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.18
+      },
+      "expected": false,
+      "codigo_oculto": "7004",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_5": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.2
+      },
+      "expected": false,
+      "codigo_oculto": "7005",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_6": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.22
+      },
+      "expected": false,
+      "codigo_oculto": "7006",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_7": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.24
+      },
+      "expected": false,
+      "codigo_oculto": "7007",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_8": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.26
+      },
+      "expected": false,
+      "codigo_oculto": "7008",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_9": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.28
+      },
+      "expected": false,
+      "codigo_oculto": "7009",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_10": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.3
+      },
+      "expected": false,
+      "codigo_oculto": "7010",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_11": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.32
+      },
+      "expected": false,
+      "codigo_oculto": "7011",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_12": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.34
+      },
+      "expected": false,
+      "codigo_oculto": "7012",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_13": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.36
+      },
+      "expected": false,
+      "codigo_oculto": "7013",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_14": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.38
+      },
+      "expected": false,
+      "codigo_oculto": "7014",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_15": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.4
+      },
+      "expected": false,
+      "codigo_oculto": "7015",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_16": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.42
+      },
+      "expected": false,
+      "codigo_oculto": "7016",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_17": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.44
+      },
+      "expected": false,
+      "codigo_oculto": "7017",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_18": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.46
+      },
+      "expected": false,
+      "codigo_oculto": "7018",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_19": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.48
+      },
+      "expected": false,
+      "codigo_oculto": "7019",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_20": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.5
+      },
+      "expected": false,
+      "codigo_oculto": "7020",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_21": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.52
+      },
+      "expected": true,
+      "codigo_oculto": "7021",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_22": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.54
+      },
+      "expected": true,
+      "codigo_oculto": "7022",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_23": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.56
+      },
+      "expected": true,
+      "codigo_oculto": "7023",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_24": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.58
+      },
+      "expected": true,
+      "codigo_oculto": "7024",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_25": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.6
+      },
+      "expected": true,
+      "codigo_oculto": "7025",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_26": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.62
+      },
+      "expected": true,
+      "codigo_oculto": "7026",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_27": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.64
+      },
+      "expected": true,
+      "codigo_oculto": "7027",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_28": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.66
+      },
+      "expected": true,
+      "codigo_oculto": "7028",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_29": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.68
+      },
+      "expected": true,
+      "codigo_oculto": "7029",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  },
+  "tema_30": {
+    "es_rentable": {
+      "inputs": {
+        "valor": 0.7
+      },
+      "expected": true,
+      "codigo_oculto": "7030",
+      "meta": {
+        "type": "scalar"
+      }
+    }
+  }
+}
