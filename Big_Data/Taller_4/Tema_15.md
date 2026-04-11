@@ -10,7 +10,7 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
 
 # Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
-taller = cr.taller('ID', G, 'taller4BD2026i', 5)
+taller = cr.taller('ID', G, 'taller4BD2026i', 10)
 #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_4
 
 #Nota: Los datos de su cliente están en el Excel, pero los puntos de comparación C1 y C2 son fijos para todo el curso: C1 = [0.2, 0.8] y C2 = [0.8, 0.2]. Úselos para entrenar su modelo de KNeighborsClassifier.
