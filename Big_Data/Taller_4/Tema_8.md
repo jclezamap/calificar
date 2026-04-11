@@ -12,6 +12,11 @@ from sklearn.neighbors import KNeighborsClassifier
 # Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
 taller = cr.taller('ID', G, 'taller4BD2026i', 10)
 #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_4
+#Para usar la libreria evafunciones, se coloca la URL dada y el Grupo.
+#Para validar una función se guarda el resultado en una variable y la función a validar entrecomillas:  codigo = Eva.validar('es_rentable')
+Eva = cr.evafunciones(URL, G)
+
+
 
 #Nota: Los datos de su cliente están en el Excel, pero los puntos de comparación C1 y C2 son fijos para todo el curso: C1 = [0.2, 0.8] y C2 = [0.8, 0.2]. Úselos para entrenar su modelo de KNeighborsClassifier.
 ```
