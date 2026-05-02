@@ -166,7 +166,21 @@ class evafunciones:
                     df_esp.index = res_est.index
                 pd.testing.assert_frame_equal(res_est, df_esp, check_dtype=False, check_like=True)
                 exito = True
-
+            # --- Validación de modelos ----
+            elif hasattr(res_est, 'predict') and meta.get('type') == 'model_validation':
+                # res_est es el (modelo, scaler) retornado por el alumno
+                modelo, scaler = res_est
+                
+                # Reconstruimos X_prueba desde el JSON
+                X_prueba = inputs_raw.get('X_prueba')
+                
+                # Predecimos y comparamos
+                X_proc = scaler.transform(X_prueba)
+                preds = modelo.predict(X_proc).tolist()
+                
+                # Comparamos con esperado_raw (predicciones)
+                if preds == esperado_raw.get('predicciones'):
+                    exito = True
             # 3. GENERACIÓN DEL HASH (Solo si pasó la validación)
             if exito:
                 # Aplicamos tu fórmula exacta

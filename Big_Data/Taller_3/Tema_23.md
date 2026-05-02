@@ -1,5 +1,5 @@
 # Big Data
-## Taller 3: Análisis EDA
+## Taller_3: Análisis EDA
 
 ### 🛠️ Instrucciones Previas
 ```python

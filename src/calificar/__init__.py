@@ -1,6 +1,6 @@
 # src/calificar/__init__.py
 
-__version__ = "0.1.17"
+__version__ = "0.1.18"
 
 #Se importa los módulos que están en core
 from .core import taller, evafunciones
