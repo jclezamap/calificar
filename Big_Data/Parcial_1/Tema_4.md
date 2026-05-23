@@ -1,5 +1,5 @@
 # Big Data
-## Parcial 1: Primer Parcial
+## Parcial_1: Primer Parcial
 
 ### 🛠️ Instrucciones Previas
 ```python

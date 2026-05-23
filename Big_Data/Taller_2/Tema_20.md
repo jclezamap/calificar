@@ -1,25 +1,38 @@
 # Big Data
-## Taller 2: Introducción a la Librería Pandas
+## Taller_2: Modelos de Regresión Avanzados
 
 ### 🛠️ Instrucciones Previas
 ```python
-Para realizar este taller, asegúrate de tener instalada las librerías numpy, pandas y calificar. 
+# Configuración inicial del Taller 5
+import pandas as pd
+import numpy as np
+import calificar as cr
+import pandas as pd
+import numpy as np
+import json
+import hashlib
+import os
+import joblib
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import recall_score, f1_score, roc_auc_score  
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+
+import calificar as cr
 
 
-    #!pip install calificar
-    #Librerias para el Taller
-    import calificar as cr
-    import numpy as np
-    import pandas as pd
-    
-    Taller2=cr.taller('1026',1, 'taller2BD2026i',11)
-    
-    #Se cambia '1026' por su código estudiantil, si son dos se separa por ;, así: '1026;1027'
-    #Se cambia 1 por el Número de su Grupo asignado. 
+# Reemplace 'ID' por su código estudiantil, si son dos se separa por ;, así: '1026;1027' y 'G' por su número de grupo.
+taller5 = cr.taller('ID', G, 'taller5BD2026i', 10)
 
-    
 
-    #GIT para validación de funciones de este taller: https://raw.githubusercontent.com/jclezamap/calificar/refs/heads/main/Big_Data/Taller_2
+
+#Nota: Este taller recopila todo lo que hemos visto en clase.
 ```
 
 ---
@@ -27,42 +40,61 @@ Para realizar este taller, asegúrate de tener instalada las librerías numpy, p
 
 #### 📋 Enunciados del Taller 
 
-**1. Creación de la Tabla Principal:**   
-   a) Antes de iniciar, coloque la siguiente función en python para generar números aleatorios con una semilla establecida  `np.random.seed(2050)`.   
-   b) Cree un rango de fechas (`pd.date_range`) que inicie en '2022-01-01', con 12 períodos y frecuencia de inicio de mes (`freq='MS'`).   
-   c) Genere una matriz de números aleatorios enteros (`np.random.randint`) entre 10 y 100, con un tamaño de 12 filas y 4 columnas.   
-   d) Construya el DataFrame `Nuevo1` usando esa matriz, las fechas como índice y nombre las columnas como 'Col1', 'Col2', 'Col3' y 'Col4'.   
-   **[0] ¿Cuál es el resultado de sumar todos los valores obtenidos al aplicar `.describe()` a la columna 'Col1'?**
+**1. Análisis de Multicolinealidad (VIF) y Selección:**   
+   a) Cargue el dataset 'credit-g' usando `fetch_openml(name='credit-g', version=1, as_frame=True)`.   
+   b) Filtre únicamente las variables numéricas base: `['duration', 'credit_amount', 'age']`.   
+   c) Calcule el Factor de Inflación de la Varianza (VIF) para cada una de estas variables.   
+   **[0] ¿Cuál es el valor del VIF calculated para la variable 'credit_amount'? (Exprese con 4 decimales)**
 
-**2. Cargar archivo en Excel** Abra el archivo `Actividad1.xlsx` en la hoja llamada '20'. Extraiga únicamente las primeras 4 filas (utilice `.iloc[0:4]`) y seleccione la columna 'B'. **[1] ¿Cuál es el promedio (mean) de esos 4 valores?**
+**2. Diagnóstico y Balanceo de Clases:**   
+   a) Mapee la variable 'class' para crear una variable objetivo binaria (`target`) donde 'bad' equivale a 1 y 'good' a 0.   
+   b) Calcule la proporción (porcentaje) de la clase minoritaria (1) en todo el conjunto de datos original.   
+   **[1] ¿Qué porcentaje (%) de los datos pertenece a la clase minoritaria (1)? (Exprese con 2 decimales, ej: 30.00)**
 
-**3. Filtro y Reordenar:** De la tabla `Nuevo1`, seleccione el rango de fechas de Octubre a Diciembre de 2022 (pista: use `.loc['2022-10-01':'2022-12-01']`). Transponga los datos con `.T`. Luego, use `.sort_values` para ordenar la tabla de mayor a menor (falso en ascendente) basándose en los valores de la columna de la última fecha disponible. **[2] ¿Qué valor numérico quedó en la fila 'Col2' para esa fecha final?**
+**3. Transformación de Variables Asimétricas:**   
+   a) Genere una copia de la columna 'credit_amount' y aplique una transformación logarítmica natural: `np.log(df['credit_amount'])`.   
+   b) Calcule el coeficiente de asimetría (*skewness*) de esta variable transformada usando el método `.skew()`.   
+   **[2] ¿Cuál es el coeficiente de asimetría de 'credit_amount' después de aplicar el logaritmo natural?**
 
-**4. Producto Punto:** En el archivo `Actividad1.xlsx` (hoja '20'), identifique las últimas 3 filas de la tabla (puede usar `.tail(3)`). Realice la operación de producto punto con el método `.dot()` entre la columna 'A' y la columna 'C'. **[3] ¿Cuál es el resultado final de esta operación?**
+**4. Tratamiento de Outliers (Rango Intercuartílico - IQR):**   
+   a) Calcule el Límite Superior de valores atípicos para la variable 'duration' usando la fórmula estricta: `Q3 + 1.5 * IQR`.   
+   b) Determine cuántos registros de la columna 'duration' exceden de forma estricta este límite en el dataset completo.   
+   **[3] ¿Cuántos registros atípicos (outliers) superiores se identificaron en la columna 'duration'?**
 
-**5. Análisis de Datos de Combustibles:** Cargue el archivo CSV desde la URL 'https://economiafinanciera.com.co/download/Combustibles.csv'. Siga este orden:   
-   a) Convierta 'fecha_despacho' a formato fecha con `pd.to_datetime`.   
-   b) Cree la columna 'Año' usando `.dt.year` y la columna 'Mes' usando `.dt.month`.   
-   c) Filtre la tabla para dejar solo los registros donde 'municipio_proveedor' sea exactamente 'BOGOTA, D.C.'.   
-   d) Agrupe por 'Año' y 'Mes', sume el 'volumen_despachado' y aplique `.reset_index()` al final.   
-   **[4] ¿Cuál fue el volumen total despachado en Bogotá durante Diciembre (12) de 2022?**
+**5. Construcción del ColumnTransformer:**   
+   a) Defina las variables numéricas como `['duration', 'credit_amount', 'age']` y las categóricas como `['checking_status', 'purpose']`.   
+   b) Diseñe un preprocesador usando `ColumnTransformer` que aplique:   
+      - Para numéricas: Un pipeline con `SimpleImputer(strategy='median')` y `StandardScaler()`.   
+      - Para categóricas: Un pipeline con `SimpleImputer(strategy='most_frequent')` y `OneHotEncoder(handle_unknown='ignore', sparse_output=False)`.   
+   c) Separe sus variables en `X` (las 5 características indicadas) e `y` (`target`), y realice un split con `test_size=0.2` y `random_state=2050`.   
+   d) Ajuste (`fit_transform`) el preprocesador ÚNICAMENTE con los datos de entrenamiento `X_train`.   
+   **[4] ¿Cuántas columnas totales tiene la matriz resultante de entrenamiento preprocesada?**
 
-**6. Resumen Estadístico:** Cargue el archivo `Resultados2.xlsx` que está en su carpeta del taller en Github. Seleccione la columna 'TD' y aplique `.describe()`.   
-**[5] ¿Cuál es el valor de la desviación estándar?** (Es el dato que aparece en la posición física [2] del resultado).
+**6. Pipeline Completo de Clasificación Base:**   
+   a) Construya un objeto `Pipeline` que integre el preprocesador del punto anterior como primer paso, y un modelo base `LogisticRegression(random_state=2050, max_iter=1000)`.   
+   b) Entrene el pipeline usando `X_train` e `y_train`. Calcule la predicción sobre el conjunto de prueba `X_test`.   
+   **[5] ¿Cuál es la precisión global (*accuracy_score*) obtenida por este pipeline base en el conjunto de prueba?**
 
-**7. RETO LIMPIEZA (Funciones):** Crea una función llamada `limpiar_nulos(df)`.   
-Dentro de la función, use el método `.fillna(0)` para que todos los valores vacíos se conviertan en cero. La función debe terminar con `return` seguido de la tabla modificada. Use `datos_reto.csv` que se encuentra en la carpeta de Github para probar que funcione. **Valide con evafunciones para obtener su código de éxito.**[6]¿Cuál es el código de la validación?**
+**7. Métricas de Evaluación de la Matriz de Confusión:**   
+   a) Genere la matriz de confusión o use métricas directas sobre el conjunto de prueba evaluado con el pipeline anterior.   
+   b) Calcule el valor exacto de la sensibilidad (*Recall*) enfocado en la clase de riesgo (clase 1).   
+   **[6] ¿Cuál es el valor del Recall obtenido para la clase 1 en el conjunto de prueba? (Exprese con 4 decimales)**
 
-**8. RETO OPERACIÓN (Funciones):** Defina una función llamada `nueva_moneda(df)`.   
-Dentro, cree la columna 'Dolares' dividiendo 'Col1' entre 4000. No olvide el `return`. **Valide con evafunciones para obtener su código de éxito.**[7]¿Cuál es el código de la validación?**
+**8. Selección del Mejor Modelo (Competencia F1-Score):**   
+   a) Instancie un segundo modelo competitivo reemplazando el clasificador por un `DecisionTreeClassifier(random_state=2050)` dentro de una nueva estructura de Pipeline idéntica.   
+   b) Entrene y evalúe este árbol en el conjunto de prueba. Extraiga el valor de `f1_score` para la clase 1 de ambos modelos.   
+   **[7] ¿Cuál es el F1-Score más alto para la clase 1 obtenido entre la Regresión Logística y el Árbol de Decisión?**
 
-**9. Cálculos Comparativos:** Usando la tabla `Nuevo1`, obtenga el promedio de 'Col1' y el promedio de 'Col2'. Reste ambos resultados: `promedio_col1 - promedio_col2`. **[8] ¿Cuál es el valor de esa diferencia?**
+**9. Sintonización de Hiperparámetros (Grid Search con Validación Cruzada):**   
+   a) Tome el pipeline que contiene el `DecisionTreeClassifier` y configure una búsqueda usando `GridSearchCV`.   
+   b) Defina exactamente la siguiente rejilla de parámetros: `classifier__max_depth: [3, 5, 10]` y `classifier__min_samples_split: [2, 5]`.   
+   c) Configure la búsqueda con validación cruzada `cv=3` y optimizando la métrica `scoring='f1'`. Entrene sobre `X_train`.   
+   **[8] ¿Cuál es el valor del mejor parámetro 'max_depth' seleccionado por la búsqueda en rejilla?**
 
-**10. RETO FINAL (Filtrado Avanzado):** Defina la función `reporte_pares(df)`.   
-   a) Identifique los meses pares usando el operador módulo en el índice: `df.index.month % 2 == 0`.   
-   b) Filtre la tabla original con esa condición.   
-   c) Sume los valores de la columna 'Col3' de esa tabla filtrada y use `return` para devolver el resultado.   
-   **[9] ¿Cuánto es la suma de la columna 'Col3'?**   **Valide con evafunciones para obtener su código de éxito.**[10]¿Cuál es el código de la validación?**
+**10. Evaluación del Pipeline Final Optimizado:**   
+    a) Extraiga el mejor estimador sintonizado del Grid Search (`grid.best_estimator_`) y prediga las probabilidades del conjunto de prueba.   
+    b) Calcule la métrica del Área Bajo la Curva ROC (`roc_auc_score`) en el conjunto de prueba.   
+    **[9] ¿Cuál es el valor del AUC-ROC en el conjunto de prueba para el árbol optimizado? (Exprese con 4 decimales)**
 
 
 ---
