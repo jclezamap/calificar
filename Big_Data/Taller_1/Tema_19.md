@@ -1,5 +1,5 @@
 # Big Data
-## Taller 1: Librería Numpy
+## Taller_1: Librería Numpy
 
 ### 🛠️ Instrucciones Previas
 ```python
