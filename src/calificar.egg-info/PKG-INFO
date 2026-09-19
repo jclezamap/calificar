@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: calificar
-Version: 0.1.19
+Version: 0.1.20
 Summary: Permite calificar talleres a través de Python
 Author-email: Juan Carlos Lezama <jclezamap@gmail.com>
 Requires-Python: >=3.7
@@ -24,6 +24,7 @@ Dynamic: license-file
 ## 📍 Índice
 - [📦 calificar](#-calificar)
   - [📍 Índice](#-índice)
+  - [🆕 Novedades](#-novedades)
   - [🚀 Instalación](#-instalación)
   - [🛠️ Configuración Inicial](#️-configuración-inicial)
     - [📋 Parámetros requeridos:](#-parámetros-requeridos)
@@ -31,12 +32,22 @@ Dynamic: license-file
   - [✅ Calificar y Validar](#-calificar-y-validar)
     - [1. Obtener Nota y Registrar](#1-obtener-nota-y-registrar)
     - [2. Validación de Funciones (`evafunciones`)](#2-validación-de-funciones-evafunciones)
+  - [📓 Actividades en Colab (`evacolab`)](#-actividades-en-colab-evacolab)
   - [🔍 Funciones Auxiliares](#-funciones-auxiliares)
     - [Ver respuestas guardadas](#ver-respuestas-guardadas)
   - [💡 Ejemplos Completos](#-ejemplos-completos)
     - [👨‍💻 Caso Individual](#-caso-individual)
     - [👥 Caso en Parejas](#-caso-en-parejas)
+    - [📓 Actividad en Colab](#-actividad-en-colab)
   - [📄 Licencia](#-licencia)
+
+---
+
+## 🆕 Novedades
+
+* **Nueva clase `evacolab`:** valida tu notebook de Google Colab contra la rúbrica de la actividad y registra la entrega. Consulta la sección [📓 Actividades en Colab](#-actividades-en-colab-evacolab).
+* **Nuevo resultado de `calificar()`:** la validación de puntos ya no aparece como `1;0;0;...`. Ahora se muestra una tabla vertical con cada pregunta en verde (correcta) o en rojo (incorrecta), numerada desde **P0**, igual que los índices de Python.
+* **Resumen al crear el taller:** al inicializar `cr.taller(...)` se muestra tu nota y el tiempo restante para el cierre. El detalle por pregunta aparece solo cuando ejecutas `calificar()`.
 
 ---
 
@@ -48,6 +59,15 @@ Instálalo fácilmente usando `pip`:
 pip install calificar
 
 ```
+
+En Google Colab o Jupyter, antepón `!` al comando. Si ya lo tenías instalado, agrega `-U` para obtener la última versión:
+
+```python
+!pip install -U calificar
+
+```
+
+> Si ya habías importado la librería en la sesión, reinicia el entorno de ejecución después de actualizar.
 
 Luego, impórtalo en tu entorno de trabajo:
 
@@ -66,6 +86,8 @@ Para comenzar, debes inicializar tu taller. Esta función conecta tu código con
 Taller1 = cr.taller('CODIGO', GRUPO, 'NOMBRE_TALLER', NUM_PREGUNTAS)
 
 ```
+
+Al crear el taller verás una tarjeta con tu **nota** y el **mensaje** del sistema, que incluye el tiempo restante para el cierre. En este paso no se muestra qué preguntas están correctas: ese detalle aparece cuando ejecutas `calificar()`.
 
 ### 📋 Parámetros requeridos:
 
@@ -102,11 +124,21 @@ Taller1.calificar()
 
 ```
 
-**Al ejecutarlo verás:**
+**Al ejecutarlo verás una tarjeta con:**
 
-1. 🔢 **Validación de Puntos:** Un `1` por cada punto correcto y `0` por los incorrectos.
-2. 📝 **Nota:** Tu calificación actual.
+1. 📝 **Nota:** Tu calificación actual y cuántas preguntas tienes correctas.
+2. 🔢 **Validación de Puntos:** Una tabla vertical con una fila por pregunta. Cada fila muestra la respuesta que enviaste y el resultado, en verde si es correcta o en rojo si es incorrecta.
 3. 💬 **Mensaje:** Confirmación de registro y el tiempo restante para el cierre del taller.
+
+Ejemplo de la tabla:
+
+| Pregunta | Tu respuesta | Resultado |
+|:--------:|:------------:|:----------|
+| 🟩 P0 | 12.5 | ✔ Correcta |
+| 🟥 P1 | 7 | ✘ Incorrecta |
+| 🟥 P2 | — | ✘ Incorrecta |
+
+> Las preguntas se numeran desde **P0**, igual que el índice que usaste en `respuestas()`. Así, **P0** corresponde a la pregunta **#1** del enunciado. Un guion (—) indica que esa pregunta no tiene respuesta guardada.
 
 ### 2. Validación de Funciones (`evafunciones`)
 
@@ -114,7 +146,7 @@ Si el taller requiere crear una función de Python, usa esta herramienta para ob
 
 ```python
 # Configuración del validador
-URL = "[https://github.com/usuario/repo/taller1](https://github.com/usuario/repo/taller1)"
+URL = "https://github.com/usuario/repo/taller1"
 eva = cr.evafunciones(URL, GRUPO)
 
 # Si tu función es correcta, esto generará un código secreto
@@ -124,6 +156,37 @@ codigo = eva.validar("nombre_de_tu_funcion")
 Taller1.respuestas(4, codigo)
 
 ```
+
+---
+
+## 📓 Actividades en Colab (`evacolab`)
+
+Algunas actividades se entregan como un notebook de Google Colab. En ese caso, `evacolab` envía tu notebook a la plataforma, lo revisa con la rúbrica de la actividad y registra la entrega.
+
+```python
+ev = cr.evacolab(codigo='CODIGO', actividad=NUM_ACTIVIDAD)
+ev.validar()
+
+```
+
+**Parámetros:**
+
+* **`codigo`**: Tu cédula o código estudiantil (entre comillas). Debe estar registrado en la lista del curso.
+* **`actividad`**: El número o nombre de la actividad que indicó el docente.
+
+**Antes de validar:**
+
+* Ejecútalo **dentro de Google Colab**, porque la función lee el notebook que tienes abierto.
+* Pon la celda de validación al final del notebook.
+* Ejecuta todas las celdas (**Entorno de ejecución → Ejecutar todas**). La rúbrica revisa que las celdas estén ejecutadas y que tengan resultados y gráficos visibles.
+
+**Al ejecutarlo verás una tarjeta con:**
+
+1. 📝 **Nota:** Tu calificación y el porcentaje de requisitos cumplidos.
+2. 📋 **Rúbrica:** Cada requisito de la actividad (variables, funciones, imports, celdas ejecutadas, gráficos, etc.) con **SI** en verde o **NO** en rojo.
+3. ⚠️ **Alerta de posible copia:** Aparece si tu notebook se parece mucho a otra entrega de la misma actividad. El docente verá el detalle.
+
+> Si necesitas los datos completos de la validación, quedan guardados en `ev.resultado`.
 
 ---
 
@@ -168,9 +231,23 @@ Taller1 = cr.taller('1011;1012', 12, 'taller1FC2026i', 9)
 
 ```
 
+### 📓 Actividad en Colab
+
+```python
+# Primera celda del notebook
+!pip install -U calificar
+import calificar as cr
+
+# ... desarrollo de la actividad en las celdas intermedias ...
+
+# Última celda del notebook
+ev = cr.evacolab(codigo='1026', actividad=3)
+ev.validar()
+
+```
+
 ---
 
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT.
-
