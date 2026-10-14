@@ -1,4 +1,4 @@
-# 📚 Portal de Parciales
+# 📚 Portal de Talleres
 
  Seleccione su curso:
 
