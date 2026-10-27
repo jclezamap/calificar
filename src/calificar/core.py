@@ -5,14 +5,20 @@ import numpy as np
 import pandas as pd
 import inspect
 import hashlib
+import math
 import sys
 import os
 import json
 from html import escape as _esc
 
 
+SITIO = os.environ.get("CALIFICAR_SITIO", "https://economiafinanciera.com.co").rstrip("/")
+COLAB = os.environ.get("VALIDARCOLAB_URL", "https://colab.economiafinanciera.com.co").rstrip("/")
+TIEMPO = 60  # segundos de espera por respuesta
+
+
 # =====================================================================
-#  Utilidades de presentación (las usan taller y evacolab)
+#  Utilidades de presentación (las usan taller, parcial y evacolab)
 # =====================================================================
 _VERDE = "#10b981"
 _ROJO = "#ef4444"
@@ -44,123 +50,84 @@ def _etiqueta(texto, color, ancho=48):
             % (ancho, color, _esc(str(texto))))
 
 
-# =====================================================================
-#  Talleres con respuestas (economiafinanciera.com.co)
-# =====================================================================
-class taller:
-    def __init__(self, integrante, grupo, taller, cant_respuestas=1, curso='0'):
-        # Datos Iniciales
-        self.integrante = integrante
-        self.grupo = grupo
-        self.taller = taller
-        self.curso = curso
-        self.resp = np.zeros(cant_respuestas, 'U256')  # No Modificar
-        # Al crear el taller se muestra solo la nota y el mensaje (sin detalle por pregunta)
-        self._resumen_inicial()
+def _formatear(valor):
+    """La respuesta como la manda la macro de Excel.
 
-    def respuestas(self, indice, valor):
+    Los números van con 15 cifras significativas, como los muestra Excel.
+    Antes viajaban con todas las cifras de Python (0.1 + 0.2 llegaba como
+    0.30000000000000004) y no coincidían con la respuesta guardada.
+    """
+    if valor is None:
+        return ""
+    if isinstance(valor, (bool, np.bool_)):
+        return str(bool(valor))
+    if isinstance(valor, (np.integer,)):
+        return str(int(valor))
+    if isinstance(valor, (float, np.floating)):
+        v = float(valor)
+        if math.isnan(v) or math.isinf(v):
+            return str(v)
+        if v.is_integer() and abs(v) < 1e15:
+            return str(int(v))
+        return format(v, ".15g")
+    return str(valor).strip()
+
+
+def _aviso_html(texto):
+    """¿Respondió el hosting con una página (bloqueo, captcha) en vez del sistema?"""
+    t = (texto or "").lstrip().lower()
+    return t.startswith("<!doctype") or t.startswith("<html") or "<body" in t[:500]
+
+
+def _post(url, datos):
+    """POST al sistema de notas. Devuelve el texto o lanza RuntimeError legible."""
+    try:
+        resp = requests.post(url, data=datos, timeout=TIEMPO,
+                             headers={"User-Agent": "calificar-python"})
+    except requests.exceptions.Timeout:
+        raise RuntimeError("El servidor tardó demasiado en responder. Intenta de nuevo.")
+    except requests.exceptions.RequestException:
+        raise RuntimeError("No hay conexión con economiafinanciera.com.co.")
+    texto = resp.text or ""
+    if resp.status_code >= 500 or _aviso_html(texto):
+        raise RuntimeError("El servidor no pudo atender la calificación (código %s). "
+                           "Tu nota anterior no cambió; intenta en un momento." % resp.status_code)
+    return texto
+
+
+def _tabla_calificacion(titulo, nota, mensaje, puntos, enviadas, subtitulo=""):
+    """Tarjeta con nota, conteo y tabla vertical desde P0 (igual que la web)."""
+    filas, texto = [], []
+    correctas = 0
+    for i, p in enumerate(puntos):
         try:
-            self.resp[indice] = valor
-            print(f"🔢 La respuesta {indice} se actualizó a {valor}.")
-        except IndexError:
-            print(f"❌ Error: El índice {indice} está fuera de rango.")
+            valor = float(p)
+        except ValueError:
+            valor = 0.0
+        if valor >= 1:
+            color, estado, icono = _VERDE, "Correcta", "✔"
+            correctas += 1
+        elif valor > 0:
+            color, estado, icono = _AMBAR, "Parcial", "◐"
+        else:
+            color, estado, icono = _ROJO, "Incorrecta", "✘"
 
-    def _preparar_respuestas(self):
-        if hasattr(self.resp, 'tolist'):  # Si es un array de numpy
-            return ';'.join(map(str, self.resp.tolist()))
-        elif isinstance(self.resp, list):  # Si es una lista normal
-            return ';'.join(map(str, self.resp))
-        return str(self.resp)
+        enviada = str(enviadas[i]) if i < len(enviadas) else ""
+        enviada = enviada if enviada.strip() else "—"
 
-    def _enviar(self, **extra):
-        """Envía las respuestas al servidor y devuelve su respuesta separada por '|'."""
-        datos = {
-            'Integrantes': self.integrante,
-            'Grupo': self.grupo,
-            'Curso': self.curso,
-            'Respuestas': self._preparar_respuestas(),
-            'python': 1
-        }
-        datos.update(extra)
-        url = f'https://www.economiafinanciera.com.co/index.php?app=excel&modulo=taller&accion=respuestas&Actividad={self.taller}'
-        resp = requests.post(url, data=datos, timeout=60)
-        return resp.text.split("|")
+        filas.append(
+            "<tr style='border-top:1px solid #f1f5f9'>"
+            "<td style='padding:4px 8px'>%s</td>"
+            "<td style='padding:4px 8px;color:#44403c'>%s</td>"
+            "<td style='padding:4px 8px;color:%s;font-weight:600'>%s %s</td>"
+            "</tr>" % (_etiqueta("P%d" % i, color), _esc(enviada), color, icono, estado)
+        )
+        texto.append("P%d  %-10s  %s" % (i, estado, enviada))
 
-    @staticmethod
-    def _leer(partes):
-        """'1;0;0;| 0.6| Mensaje;' -> (['1','0','0'], '0.6', 'Mensaje')"""
-        puntos = [p.strip() for p in partes[0].split(";") if p.strip()]
-        nota = partes[1].strip()
-        mensaje = partes[2][1:].strip().rstrip(";").strip()
-        return puntos, nota, mensaje
-
-    def _resumen_inicial(self):
-        try:
-            # 'inicio' le permite al servidor distinguir esta consulta de una calificación real
-            partes = self._enviar(inicio=1)
-            if len(partes) >= 3:
-                _, nota, mensaje = self._leer(partes)
-                self._mostrar_calificacion(nota, mensaje)
-            else:
-                print(f"Respuesta recibida: {partes[0]}")
-        except Exception as e:
-            print(f"❌ Error al conectar con el taller: {str(e)}")
-
-    def calificar(self):
-        try:
-            partes = self._enviar()
-            if len(partes) >= 3:
-                puntos, nota, mensaje = self._leer(partes)
-                self._mostrar_calificacion(nota, mensaje, puntos)
-            else:
-                print(f"Respuesta recibida: {partes[0]}")
-        except Exception as e:
-            print(f"❌ Error en calificación: {str(e)}")
-
-    def _mostrar_calificacion(self, nota, mensaje, puntos=None):
-        """Sin puntos: solo nota y mensaje. Con puntos: tabla vertical desde P0."""
-        if puntos is None:
-            html = """
+    html = """
 <div style="%(tarjeta)s;display:inline-block;min-width:320px">
-  <div style="font-weight:700;color:#374151">%(taller)s</div>
-  <div style="font-size:28px;font-weight:700;color:%(azul)s;margin:8px 0 2px">Nota %(nota)s</div>
-  <p style="margin:8px 0 0;font-size:13px;color:#57534e">%(mensaje)s</p>
-</div>
-""" % {"tarjeta": _TARJETA, "azul": _AZUL, "taller": _esc(str(self.taller)),
-                "nota": _esc(nota), "mensaje": _esc(mensaje)}
-            _mostrar_html(html, "Nota: %s\n%s" % (nota, mensaje))
-            return
-
-        filas, texto = [], []
-        correctas = 0
-        for i, p in enumerate(puntos):
-            try:
-                valor = float(p)
-            except ValueError:
-                valor = 0.0
-            if valor >= 1:
-                color, estado, icono = _VERDE, "Correcta", "✔"
-                correctas += 1
-            elif valor > 0:
-                color, estado, icono = _AMBAR, "Parcial", "◐"
-            else:
-                color, estado, icono = _ROJO, "Incorrecta", "✘"
-
-            enviada = str(self.resp[i]) if i < len(self.resp) else ""
-            enviada = enviada if enviada.strip() else "—"
-
-            filas.append(
-                "<tr style='border-top:1px solid #f1f5f9'>"
-                "<td style='padding:4px 8px'>%s</td>"
-                "<td style='padding:4px 8px;color:#44403c'>%s</td>"
-                "<td style='padding:4px 8px;color:%s;font-weight:600'>%s %s</td>"
-                "</tr>" % (_etiqueta("P%d" % i, color), _esc(enviada), color, icono, estado)
-            )
-            texto.append("P%d  %-10s  %s" % (i, estado, enviada))
-
-        html = """
-<div style="%(tarjeta)s;display:inline-block;min-width:320px">
-  <div style="font-weight:700;color:#374151">Validación de las respuestas</div>
+  <div style="font-weight:700;color:#374151">%(titulo)s</div>
+  %(subtitulo)s
   <div style="font-size:28px;font-weight:700;color:%(azul)s;margin:8px 0 2px">Nota %(nota)s</div>
   <div style="font-size:14px;color:#57534e">%(correctas)d de %(total)d preguntas correctas</div>
   <table style="border-collapse:collapse;margin-top:12px;font-size:14px">
@@ -174,23 +141,188 @@ class taller:
   <p style="margin:12px 0 0;font-size:13px;color:#57534e">%(mensaje)s</p>
 </div>
 """ % {
-            "tarjeta": _TARJETA,
-            "azul": _AZUL,
-            "nota": _esc(nota),
-            "correctas": correctas,
-            "total": len(puntos),
-            "filas": "".join(filas),
-            "mensaje": _esc(mensaje),
+        "tarjeta": _TARJETA,
+        "azul": _AZUL,
+        "titulo": _esc(titulo),
+        "subtitulo": ("<div style='font-size:13px;color:#57534e'>%s</div>" % _esc(subtitulo)) if subtitulo else "",
+        "nota": _esc(nota),
+        "correctas": correctas,
+        "total": len(puntos),
+        "filas": "".join(filas),
+        "mensaje": _esc(mensaje),
+    }
+    alterno = "Nota: %s (%d de %d correctas)\n%s\n%s" % (
+        nota, correctas, len(puntos), "\n".join(texto), mensaje)
+    _mostrar_html(html, alterno)
+
+
+def _resumen(titulo, nota, mensaje, subtitulo=""):
+    html = """
+<div style="%(tarjeta)s;display:inline-block;min-width:320px">
+  <div style="font-weight:700;color:#374151">%(titulo)s</div>
+  %(subtitulo)s
+  <div style="font-size:28px;font-weight:700;color:%(azul)s;margin:8px 0 2px">Nota %(nota)s</div>
+  <p style="margin:8px 0 0;font-size:13px;color:#57534e">%(mensaje)s</p>
+</div>
+""" % {"tarjeta": _TARJETA, "azul": _AZUL, "titulo": _esc(str(titulo)),
+       "subtitulo": ("<div style='font-size:14px;font-weight:600;color:%s'>%s</div>" % (_AZUL, _esc(subtitulo))) if subtitulo else "",
+       "nota": _esc(nota), "mensaje": _esc(mensaje)}
+    _mostrar_html(html, "%s\n%sNota: %s\n%s" % (titulo, (subtitulo + "\n") if subtitulo else "", nota, mensaje))
+
+
+class _ConRespuestas:
+    """Lo común a taller y parcial: el vector de respuestas."""
+
+    def respuestas(self, indice, valor):
+        try:
+            self.resp[indice] = _formatear(valor)
+            print(f"🔢 La respuesta {indice} se actualizó a {self.resp[indice]}.")
+        except IndexError:
+            print(f"❌ Error: El índice {indice} está fuera de rango (hay {len(self.resp)} preguntas: 0 a {len(self.resp) - 1}).")
+
+    def _preparar_respuestas(self):
+        if hasattr(self.resp, 'tolist'):  # Si es un array de numpy
+            return ';'.join(_formatear(x) if not isinstance(x, str) else x for x in self.resp.tolist())
+        elif isinstance(self.resp, list):  # Si es una lista normal
+            return ';'.join(map(_formatear, self.resp))
+        return str(self.resp)
+
+
+# =====================================================================
+#  Talleres con respuestas (economiafinanciera.com.co)
+# =====================================================================
+class taller(_ConRespuestas):
+    def __init__(self, integrante, grupo, taller, cant_respuestas=1, curso='0'):
+        # Datos Iniciales
+        self.integrante = str(integrante).strip()
+        self.grupo = grupo
+        self.taller = str(taller).strip()
+        self.curso = curso
+        self.resp = np.zeros(cant_respuestas, 'U256')  # No Modificar
+        self.resp[:] = ""
+        # Al crear el taller se muestra solo la nota y el mensaje (sin detalle por pregunta)
+        self._resumen_inicial()
+
+    def _enviar(self, **extra):
+        """Envía las respuestas al servidor y devuelve su respuesta separada por '|'."""
+        datos = {
+            'Integrantes': self.integrante,
+            'Grupo': self.grupo,
+            'Curso': self.curso,
+            'Respuestas': self._preparar_respuestas(),
+            'python': 1
         }
-        alterno = "Nota: %s (%d de %d correctas)\n%s\n%s" % (
-            nota, correctas, len(puntos), "\n".join(texto), mensaje)
-        _mostrar_html(html, alterno)
+        datos.update(extra)
+        url = f'{SITIO}/index.php?app=excel&modulo=taller&accion=respuestas&Actividad={self.taller}'
+        return _post(url, datos).split("|")
+
+    @staticmethod
+    def _leer(partes):
+        """'1;0;0;| 0.6| Mensaje;' -> (['1','0','0'], '0.6', 'Mensaje')"""
+        puntos = [p.strip() for p in partes[0].split(";") if p.strip()]
+        nota = partes[1].strip()
+        mensaje = partes[2][1:].strip().rstrip(";").strip() if len(partes) > 2 else ""
+        return puntos, nota, mensaje
+
+    def _resumen_inicial(self):
+        try:
+            # 'inicio' le permite al servidor distinguir esta consulta de una calificación real
+            partes = self._enviar(inicio=1)
+            if len(partes) >= 3:
+                _, nota, mensaje = self._leer(partes)
+                self._mostrar_calificacion(nota, mensaje)
+            else:
+                print(f"Respuesta recibida: {partes[0][:300]}")
+        except Exception as e:
+            print(f"❌ Error al conectar con el taller: {str(e)}")
+
+    def calificar(self):
+        try:
+            partes = self._enviar()
+            if len(partes) >= 3:
+                puntos, nota, mensaje = self._leer(partes)
+                self._mostrar_calificacion(nota, mensaje, puntos)
+            else:
+                print(f"Respuesta recibida: {partes[0][:300]}")
+        except Exception as e:
+            print(f"❌ Error en calificación: {str(e)}")
+
+    def _mostrar_calificacion(self, nota, mensaje, puntos=None):
+        """Sin puntos: solo nota y mensaje. Con puntos: tabla vertical desde P0."""
+        if puntos is None:
+            _resumen(self.taller, nota, mensaje)
+            return
+        _tabla_calificacion("Validación de las respuestas", nota, mensaje, puntos, list(self.resp))
 
     def validar(self):
         try:
             return self._enviar()[0].split(";")
         except Exception as e:
             return f"❌ Error en validación: {str(e)}"
+
+
+# =====================================================================
+#  Parciales (economiafinanciera.com.co) — igual que el libro de Excel
+# =====================================================================
+class parcial(_ConRespuestas):
+    """Parcial de Economía Financiera presentado desde Python.
+
+    Uso:
+        p = cr.parcial('CODIGO', ID_PARCIAL, 'CLAVE', NUM_PREGUNTAS)
+        p.respuestas(0, valor)
+        p.calificar()
+
+    Igual que el libro de Excel: al crearlo, Economía Financiera te asigna el
+    tema (queda en p.tema) y ese primer envío cuenta como intento. Cada
+    calificar() es un intento; se respetan apertura, cierre e intentos, y
+    cuenta la nota más alta.
+    """
+
+    def __init__(self, integrante, id_parcial, clave, cant_respuestas=1):
+        self.integrante = str(integrante).strip()
+        self.id_parcial = str(id_parcial).strip()
+        self.clave = str(clave).strip()
+        self.resp = np.zeros(cant_respuestas, 'U256')
+        self.resp[:] = ""
+        self.tema = None
+        self.nombre = "Parcial %s" % self.id_parcial
+        self.cierre = None
+        self._abrir()
+
+    def _enviar(self, respuestas):
+        datos = {
+            "ID": self.id_parcial,
+            "clave": self.clave,
+            "Integrantes": self.integrante,
+            "Respuestas": respuestas,
+        }
+        texto = _post(f"{SITIO}/index.php?app=parcial&modulo=calificar", datos).strip()
+        partes = texto.split("|")
+        if len(partes) < 8:
+            # El sistema responde un solo mensaje cuando no califica
+            # (clave, apertura, plazo, identificación, intentos agotados).
+            raise RuntimeError(texto[:300] or "El sistema no respondió.")
+        # Nombre | Mensaje final | Tema | Fecha actual | Fecha final | Puntos | Nota | Observaciones
+        self.nombre = partes[0].strip() or self.nombre
+        self.tema = partes[2].strip() or self.tema
+        self.cierre = partes[4].strip() or self.cierre
+        puntos = [p.strip() for p in partes[5].split(";") if p.strip()]
+        return puntos, partes[6].strip(), "|".join(partes[7:]).strip().rstrip(";").strip()
+
+    def _abrir(self):
+        try:
+            _, nota, mensaje = self._enviar("")
+            _resumen(self.nombre, nota, mensaje, subtitulo="Tema %s" % self.tema if self.tema else "")
+        except Exception as e:
+            print(f"❌ {str(e)}")
+
+    def calificar(self):
+        try:
+            puntos, nota, mensaje = self._enviar(self._preparar_respuestas())
+            _tabla_calificacion(self.nombre, nota, mensaje, puntos, list(self.resp),
+                                subtitulo="Tema %s" % self.tema if self.tema else "")
+        except Exception as e:
+            print(f"❌ {str(e)}")
 
 
 # =====================================================================
@@ -207,7 +339,7 @@ class evacolab:
     actividad: id numérico o nombre de la actividad
     El resultado completo queda en ev.resultado por si se necesita.
     """
-    SERVIDOR = "https://colab.economiafinanciera.com.co"
+    SERVIDOR = COLAB
 
     def __init__(self, codigo, actividad, servidor=None, filename="colab.ipynb"):
         self.codigo = str(codigo).strip()
@@ -248,7 +380,7 @@ class evacolab:
 
         try:
             r = requests.post(self.servidor + "/api/colab", data=payload,
-                              headers={"Content-Type": "application/json"}, timeout=60)
+                              headers={"Content-Type": "application/json"}, timeout=TIEMPO)
         except Exception as e:
             print(f"❌ No se pudo conectar con la plataforma: {e}")
             return
@@ -256,7 +388,7 @@ class evacolab:
         try:
             data = r.json()
         except ValueError:
-            print(f"❌ El servidor respondió {r.status_code}: {r.text[:300]}")
+            print(f"❌ El servidor respondió {r.status_code}.")
             return
 
         if data.get("status") == "error":
@@ -347,130 +479,213 @@ class evacolab:
 
 
 # =====================================================================
-#  Evaluación de funciones con respuestas en GitHub
+#  Evaluación de funciones
 # =====================================================================
-class evafunciones:
-    def __init__(self, url_base, num_tema):
-        self.url = url_base.rstrip('/') + '/respuestas.json'
-        self.num_tema = f"tema_{num_tema}"
-        self.salt_seguridad = "2026i"  # Debe coincidir con tu script de profesor
-        self.respuestas = self._cargar_respuestas()
+def _armar_entradas(inputs_raw, meta):
+    """Reconstruye los argumentos de la función (DataFrames incluidos)."""
+    args = []
+    for val in inputs_raw.values():
+        if isinstance(val, dict):
+            df_in = pd.DataFrame(val)
+            if meta.get('index_col'):
+                col_idx = meta['index_col']
+                if meta.get('is_datetime'):
+                    df_in[col_idx] = pd.to_datetime(df_in[col_idx])
+                df_in.set_index(col_idx, inplace=True)
+            args.append(df_in)
+        else:
+            args.append(val)
+    return args
 
+
+def _a_json(v):
+    """Valor de numpy/pandas → algo que JSON entiende (NaN → None)."""
+    if isinstance(v, (np.bool_, bool)):
+        return bool(v)
+    if isinstance(v, np.integer):
+        return int(v)
+    if isinstance(v, (np.floating, float)):
+        f = float(v)
+        return None if math.isnan(f) else f
+    if isinstance(v, (pd.Timestamp,)):
+        return str(v)
+    if isinstance(v, (list, tuple, np.ndarray)):
+        return [_a_json(x) for x in list(v)]
+    if isinstance(v, dict):
+        return {str(k): _a_json(x) for k, x in v.items()}
+    return v
+
+
+def _empaquetar(res_est, meta, inputs_raw):
+    """El resultado de la función del estudiante, listo para enviarlo."""
+    if meta.get('type') == 'model_validation':
+        modelo, scaler = res_est if isinstance(res_est, tuple) else (res_est, None)
+        X = inputs_raw.get('X_prueba')
+        X_proc = scaler.transform(X) if scaler is not None else X
+        return {"tipo": "predicciones", "valores": _a_json(modelo.predict(X_proc).tolist())}
+    if isinstance(res_est, pd.DataFrame):
+        return {"tipo": "tabla", "columnas": [str(c) for c in res_est.columns],
+                "datos": {str(c): _a_json(res_est[c].tolist()) for c in res_est.columns}}
+    if isinstance(res_est, pd.Series):
+        return {"tipo": "serie", "valores": _a_json(res_est.tolist())}
+    if meta.get('type') == 'scalar' or isinstance(res_est, (int, float, bool, np.number, np.bool_)):
+        return {"tipo": "escalar", "valor": _a_json(float(res_est))}
+    return {"tipo": "otro", "valor": _a_json(res_est)}
+
+
+class evafunciones:
+    """Valida una función de Python y entrega el código de éxito.
+
+    Nuevo (seguro):    Eva = cr.evafunciones('T2BD2026ii', G)
+        El primer dato es el identificador del taller (el mismo de cr.taller).
+        Los datos de prueba se piden a colab.economiafinanciera.com.co, tu
+        función se ejecuta aquí y el resultado se compara en el servidor. La
+        respuesta y el código nunca se publican.
+
+    Anterior:          Eva = cr.evafunciones('https://github.com/...', G)
+        Sigue funcionando para los talleres que ya están en GitHub.
+    """
+
+    def __init__(self, url_base, num_tema):
+        self.num_tema = f"tema_{num_tema}"
+        self.tema = num_tema
+        ref = str(url_base).strip()
+        self.en_servidor = not ref.lower().startswith(("http://", "https://")) and "github" not in ref.lower()
+        if self.en_servidor:
+            self.actividad = ref
+            self.respuestas = None
+        else:
+            self.url = ref.rstrip('/') + '/respuestas.json'
+            self.salt_seguridad = "2026i"  # Debe coincidir con tu script de profesor
+            self.respuestas = self._cargar_respuestas()
+
+    # ---------------- modo nuevo: el servidor compara ----------------
+    def _validar_en_servidor(self, nombre_funcion):
+        try:
+            r = requests.get(COLAB + "/api/funciones", timeout=TIEMPO,
+                             params={"actividad": self.actividad, "tema": self.tema, "funcion": nombre_funcion})
+            info = r.json()
+        except (requests.exceptions.RequestException, ValueError):
+            print("❌ No se pudo conectar con colab.economiafinanciera.com.co.")
+            return None
+        if info.get("status") != "ok":
+            print(f"❌ {info.get('message') or 'No se encontró la función.'}")
+            return None
+
+        meta = info.get("meta") or {}
+        inputs_raw = info.get("inputs") or {}
+        try:
+            import __main__
+            func = getattr(__main__, nombre_funcion)
+        except AttributeError:
+            print(f"❌ No encontré la función {nombre_funcion}. Ejecuta primero la celda donde la defines.")
+            return None
+        try:
+            casos = info.get("casos")
+            if casos:
+                # Varias entradas de prueba: la función tiene que acertar todas.
+                resultado = {"tipo": "casos", "valores": [
+                    _empaquetar(func(*_armar_entradas(c, meta)), meta, c) for c in casos]}
+            else:
+                resultado = _empaquetar(func(*_armar_entradas(inputs_raw, meta)), meta, inputs_raw)
+        except Exception as e:
+            print(f"❌ Tu función {nombre_funcion} falló con los datos de prueba: {type(e).__name__}: {str(e)[:200]}")
+            return None
+
+        try:
+            r = requests.post(COLAB + "/api/funciones/validar", timeout=TIEMPO, json={
+                "actividad": self.actividad, "tema": self.tema,
+                "funcion": nombre_funcion, "resultado": resultado,
+            })
+            data = r.json()
+        except (requests.exceptions.RequestException, ValueError):
+            print("❌ No se pudo conectar con colab.economiafinanciera.com.co.")
+            return None
+        if data.get("status") != "ok":
+            print(f"❌ {data.get('message') or 'No se pudo validar.'}")
+            return None
+        if not data.get("correcto"):
+            print(f"❌ {nombre_funcion} no da el resultado esperado"
+                  + (" en todos los casos de prueba." if info.get("casos") else "."))
+            return None
+        print(f"✅ ¡Correcto! Código de éxito: {data['codigo']}")
+        return data["codigo"]
+
+    # ---------------- modo anterior: GitHub ----------------
     def _cargar_respuestas(self):
         try:
-            # 1. LIMPIEZA TOTAL DE URL (Inmune a Colab)
             # Pasamos de 'github.com' a 'raw.githubusercontent.com'
-            # Y eliminamos los segmentos que causan el error de HTML
             raw_url = self.url.replace("github.com", "raw.githubusercontent.com") \
                               .replace("/blob/", "/") \
                               .replace("/tree/", "/") \
                               .replace("/refs/heads/", "/") \
                               .replace("/refs/branch/", "/")
-
-            # 2. PETICIÓN CON CABECERAS DE TEXTO PLANO
-            # Forzamos a GitHub a entender que queremos el contenido crudo
-            headers = {'Accept': 'application/json'}
-            response = requests.get(raw_url, headers=headers)
-
-            # 3. VERIFICACIÓN DE ESTADO
+            raw_url = raw_url.replace("raw.raw.githubusercontent.com", "raw.githubusercontent.com")
+            response = requests.get(raw_url, headers={'Accept': 'application/json'}, timeout=TIEMPO)
             if response.status_code != 200:
                 print(f"❌ Error {response.status_code}: No se pudo acceder al JSON.")
-                print(f"🔗 Ruta fallida: {raw_url}")
                 return None
-
-            # 4. PRUEBA DE CONTENIDO (Antes de convertir)
             contenido = response.text.strip()
             if not contenido.startswith("{"):
                 print("❌ Error: El servidor no devolvió un JSON válido.")
-                print(f"📝 Inicio del contenido recibido: {contenido[:50]}")
                 return None
-
             return response.json()
-
         except Exception as e:
             print(f"❌ Error al cargar el JSON: {e}")
             return None
 
     def validar(self, nombre_funcion):
-        if not self.respuestas: return None
+        if self.en_servidor:
+            return self._validar_en_servidor(nombre_funcion)
+        if not self.respuestas:
+            return None
 
-        tema_data = self.respuestas.get(self.num_tema)
+        tema_data = self.respuestas.get(self.num_tema) or {}
         reto = tema_data.get(nombre_funcion)
-        if not reto: return None
+        if not reto:
+            return None
 
         meta = reto.get('meta', {})
         inputs_raw = reto['inputs']
         esperado_raw = reto['expected']
-        base_code = reto['codigo_oculto']  # El número base (ej: 7001)
+        base_code = reto['codigo_oculto']
 
-        # 1. RECONSTRUCCIÓN DE INPUTS
-        args_est = []
-        for val in inputs_raw.values():
-            if isinstance(val, dict):
-                df_in = pd.DataFrame(val)
-                if meta.get('index_col'):
-                    col_idx = meta['index_col']
-                    if meta.get('is_datetime'):
-                        df_in[col_idx] = pd.to_datetime(df_in[col_idx])
-                    df_in.set_index(col_idx, inplace=True)
-                args_est.append(df_in)
-            else:
-                args_est.append(val)
-
-        # 2. VALIDACIÓN TÉCNICA
         exito = False
         try:
             import __main__
             func = getattr(__main__, nombre_funcion)
-            res_est = func(*args_est)
+            res_est = func(*_armar_entradas(inputs_raw, meta))
 
-            # --- Validación Escalar ---
-            if meta.get('type') == 'scalar' or isinstance(res_est, (int, float, np.number)):
+            if meta.get('type') == 'model_validation':
+                modelo, scaler = res_est if isinstance(res_est, tuple) else (res_est, None)
+                X_prueba = inputs_raw.get('X_prueba')
+                X_proc = scaler.transform(X_prueba) if scaler is not None else X_prueba
+                if modelo.predict(X_proc).tolist() == esperado_raw.get('predicciones'):
+                    exito = True
+            elif meta.get('type') == 'scalar' or isinstance(res_est, (int, float, np.number)):
                 if np.isclose(float(res_est), float(esperado_raw)):
                     exito = True
-
-            # --- Validación Serie ---
             elif isinstance(res_est, pd.Series):
                 ser_esp = pd.Series(esperado_raw)
                 if len(ser_esp) == len(res_est):
                     ser_esp.index = res_est.index
                 pd.testing.assert_series_equal(res_est, ser_esp, check_dtype=False, check_names=False)
                 exito = True
-
-            # --- Validación DataFrame ---
             elif isinstance(res_est, pd.DataFrame):
                 df_esp = pd.DataFrame(esperado_raw)
                 if meta.get('index_col') and len(df_esp) == len(res_est):
                     df_esp.index = res_est.index
                 pd.testing.assert_frame_equal(res_est, df_esp, check_dtype=False, check_like=True)
                 exito = True
-            # --- Validación de modelos ----
-            elif hasattr(res_est, 'predict') and meta.get('type') == 'model_validation':
-                # res_est es el (modelo, scaler) retornado por el alumno
-                modelo, scaler = res_est
 
-                # Reconstruimos X_prueba desde el JSON
-                X_prueba = inputs_raw.get('X_prueba')
-
-                # Predecimos y comparamos
-                X_proc = scaler.transform(X_prueba)
-                preds = modelo.predict(X_proc).tolist()
-
-                # Comparamos con esperado_raw (predicciones)
-                if preds == esperado_raw.get('predicciones'):
-                    exito = True
-            # 3. GENERACIÓN DEL HASH (Solo si pasó la validación)
             if exito:
-                # Aplicamos tu fórmula exacta
                 hash_estudiante = hashlib.sha256(
                     f"{base_code}{self.salt_seguridad}{self.num_tema}".encode()
                 ).hexdigest()[:8].upper()
-
                 print(f"✅ ¡Correcto! Código de éxito: {hash_estudiante}")
                 return hash_estudiante
 
-        except Exception as e:
-            # Si hay error en la comparación, no se genera el hash
+        except Exception:
             pass
 
         return None

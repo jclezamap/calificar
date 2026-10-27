@@ -19,6 +19,7 @@
   - [✅ Calificar y Validar](#-calificar-y-validar)
     - [1. Obtener Nota y Registrar](#1-obtener-nota-y-registrar)
     - [2. Validación de Funciones (`evafunciones`)](#2-validación-de-funciones-evafunciones)
+  - [📝 Parciales (`parcial`)](#-parciales-parcial)
   - [📓 Actividades en Colab (`evacolab`)](#-actividades-en-colab-evacolab)
   - [🔍 Funciones Auxiliares](#-funciones-auxiliares)
     - [Ver respuestas guardadas](#ver-respuestas-guardadas)
@@ -32,6 +33,10 @@
 
 ## 🆕 Novedades
 
+* **Nueva clase `parcial`:** presenta los parciales de Economía Financiera desde Python, igual que el libro de Excel (tema asignado, intentos, apertura y cierre). Consulta [📝 Parciales](#-parciales-parcial).
+* **`evafunciones` más seguro:** con el identificador del taller (`cr.evafunciones('T2BD2026ii', G)`) los datos de prueba vienen de la plataforma y el resultado se revisa allá; la respuesta y el código ya no son públicos.
+* **Decimales:** las respuestas numéricas se envían con 15 cifras, como Excel (`0.1 + 0.2` llega como `0.3`).
+* **Enunciados en la plataforma:** los talleres y parciales están en [colab.economiafinanciera.com.co](https://colab.economiafinanciera.com.co) → **Cursos**.
 * **Nueva clase `evacolab`:** valida tu notebook de Google Colab contra la rúbrica de la actividad y registra la entrega. Consulta la sección [📓 Actividades en Colab](#-actividades-en-colab-evacolab).
 * **Nuevo resultado de `calificar()`:** la validación de puntos ya no aparece como `1;0;0;...`. Ahora se muestra una tabla vertical con cada pregunta en verde (correcta) o en rojo (incorrecta), numerada desde **P0**, igual que los índices de Python.
 * **Resumen al crear el taller:** al inicializar `cr.taller(...)` se muestra tu nota y el tiempo restante para el cierre. El detalle por pregunta aparece solo cuando ejecutas `calificar()`.
@@ -129,12 +134,11 @@ Ejemplo de la tabla:
 
 ### 2. Validación de Funciones (`evafunciones`)
 
-Si el taller requiere crear una función de Python, usa esta herramienta para obtener un código de validación:
+Si el taller requiere crear una función de Python, usa esta herramienta para obtener un código de validación. El primer dato es el identificador del taller (el mismo de `cr.taller`) y el segundo tu tema:
 
 ```python
 # Configuración del validador
-URL = "https://github.com/usuario/repo/taller1"
-eva = cr.evafunciones(URL, GRUPO)
+eva = cr.evafunciones('NOMBRE_TALLER', GRUPO)
 
 # Si tu función es correcta, esto generará un código secreto
 codigo = eva.validar("nombre_de_tu_funcion")
@@ -143,6 +147,27 @@ codigo = eva.validar("nombre_de_tu_funcion")
 Taller1.respuestas(4, codigo)
 
 ```
+
+> Los talleres anteriores que usan un enlace de GitHub (`cr.evafunciones(URL, GRUPO)`) siguen funcionando igual.
+
+---
+
+## 📝 Parciales (`parcial`)
+
+Los parciales se presentan con su número y su clave, que aparecen en las instrucciones del parcial en la plataforma.
+
+```python
+Parcial = cr.parcial('CODIGO', ID_PARCIAL, 'CLAVE', NUM_PREGUNTAS)
+```
+
+Al crearlo, el sistema te asigna el **tema** (queda en `Parcial.tema`) y verás tu nota y el tiempo restante. Como en el libro de Excel, ese primer envío cuenta como intento.
+
+```python
+Parcial.respuestas(0, resultado)   # igual que en los talleres
+Parcial.calificar()                 # cada calificación es un intento
+```
+
+Cuenta la nota más alta. Fuera del horario del parcial, o sin intentos, el sistema lo indica y no califica.
 
 ---
 

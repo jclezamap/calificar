@@ -4,19 +4,27 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "calificar"
-version = "0.1.21"
+dynamic = ["version"]
 authors = [
   { name="Juan Carlos Lezama", email="jclezamap@gmail.com" },
 ]
-description = "Permite calificar talleres a través de Python"
+description = "Permite calificar talleres y parciales a través de Python"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8"
 
 dependencies = [
     "pandas>=1.4.0",
     "numpy>=1.22.0",
     "requests>=2.28.0",
 ]
+
+[project.urls]
+Homepage = "https://colab.economiafinanciera.com.co"
+Source = "https://github.com/jclezamap/calificar"
+
+[tool.setuptools.dynamic]
+# La versión se escribe en un solo lugar: src/calificar/__init__.py
+version = { attr = "calificar.__version__" }
 
 [tool.setuptools.packages.find]
 where = ["src"]

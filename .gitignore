@@ -38,3 +38,9 @@ env/
 # --- EXCEPCIONES ---
 # Si quieres que un archivo específico en la raíz SÍ se suba, lo desbloqueas así:
 # !/setup.py
+
+# --- RESPUESTAS DE FUNCIONES ---
+# Ahora se suben a colab.economiafinanciera.com.co (Docente -> Python) y no se
+# publican. Los respuestas.json que ya estaban en el repositorio siguen ahi.
+respuestas.json
+MOVER-A-github-workflows-publicar.yml
